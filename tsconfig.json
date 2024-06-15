@@ -1,26 +1,31 @@
-{
-  "compilerOptions": {
-    "target": "es5",
+{"compilerOptions": {
+    "target": "es5", // 指定ECMAScript目标版本
     "lib": [
       "dom",
       "dom.iterable",
       "esnext"
-    ],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react-jsx"
+    ], //要包含在编译中的库文件列表
+    "allowJs": true, // 允许编译JavaScript文件
+    "skipLibCheck": true, // 跳过所有声明文件的类型检查
+    "esModuleInterop": true, // 禁用命名空间导入(import * as fs from "fs") ，并启用CJS/AMD/UMD风格导入(import fs from "fs")
+    "allowSyntheticDefaultImports": true, // 允许从没有默认导出的模块中进行默认导入
+    "strict": true, // 启用所有严格类型检查选项
+    "forceConsistentCasingInFileNames": true, // 禁止对同一文件使用大小写不一致的引用。
+    "module": "esnext", //  指定模块代码生成
+    "moduleResolution": "node", // 使用Node.js风格解析模块
+    "isolatedModules": true, // 无条件地发出未解析文件的导入
+    "resolveJsonModule": true, // 包括以.json扩展名导入的模块
+    "noEmit": true, // 不输出结果(意思是不编译代码，只执行类型检查)
+    "jsx": "react", // Support JSX in .tsx files
+    "sourceMap": true, // 生成相应的.map文件
+    "declaration": true, // 生成相应的.d.ts文件
+    "noUnusedLocals": true, // 报告未使用的局部变量的错误
+    "noUnusedParameters": true, // 报告未使用参数的错误
+    "incremental": true, // 通过从先前的编译中读取/写入磁盘上的文件来启用增量编译
+    "noFallthroughCasesInSwitch": true // 报告switch语句中不可命中情况的错误
   },
   "include": [
-    "src"
-  ]
+    "src/**/*" // *** 需要做类型检查的文件 ***
+  ],
+  "exclude": ["node_modules", "build"] // *** 避免检查类型的文件 ***
 }
