@@ -12,6 +12,9 @@ import IconButton from '@mui/material/IconButton';
 import { Avatar } from '@radix-ui/themes';
 import { Link } from 'react-router-dom';
 
+/**
+ * Nav content
+ */
 const links = [
   { id: '1', name: 'testimonial card', path: '/' },
   { id: '2', name: 'blog card', path: '/blog-card' },
@@ -21,11 +24,18 @@ const links = [
   { id: '6', name: 'blog card', path: '/blog-card' },
 ];
 
+/**
+ * Navlink child component, which is used for router navigation
+ */
 interface NavLinkProps {
   name: string;
   path: string;
 }
 
+/**
+ *
+ * @param props: name-> nav text content; path-> router mapping
+ */
 const NavLink: React.FC<NavLinkProps> = ({ name, path }) => {
   return (
     <Link to={path}>
@@ -34,12 +44,24 @@ const NavLink: React.FC<NavLinkProps> = ({ name, path }) => {
   );
 };
 
-function ResponsiveAppBar() {
+/**
+ *
+ * @returns Navigation component
+ */
+function Navigation() {
+  /**
+   *  useState
+   */
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null,
   );
   const [alignment, setAlignment] = React.useState('1');
 
+  /**
+   *
+   * @param event
+   */
+  // event handlers for nav bar open and close when screen is smaller than 768
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
   };
@@ -48,13 +70,14 @@ function ResponsiveAppBar() {
     setAnchorElNav(null);
   };
 
+  // event handler for handle nav bar content switching
   const handleChange = (
-    event: React.MouseEvent<HTMLElement>,
+    _event: React.MouseEvent<HTMLElement>,
     newAlignment: string,
   ) => {
-    console.log(event);
     setAlignment(newAlignment);
   };
+
   return (
     <AppBar position='static'>
       <Container maxWidth='xl' className='bg-formColor-text-filled'>
@@ -115,6 +138,11 @@ function ResponsiveAppBar() {
             </ToggleButtonGroup>
           </Box>
           <Box sx={{ flexGrow: 0 }}>
+            {/*
+             *
+             * todo: need to replace the link while got production link
+             *
+             *  */}
             <Avatar
               size='3'
               src='https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?&w=256&h=256&q=70&crop=focalpoint&fp-x=0.5&fp-y=0.3&fp-z=1&fit=crop'
@@ -127,4 +155,4 @@ function ResponsiveAppBar() {
     </AppBar>
   );
 }
-export default ResponsiveAppBar;
+export default Navigation;
