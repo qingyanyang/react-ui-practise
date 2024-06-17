@@ -4,7 +4,6 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
-import Container from '@mui/material/Container';
 import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import MenuItem from '@mui/material/MenuItem';
@@ -80,7 +79,7 @@ function Navigation() {
 
   return (
     <AppBar position='fixed'>
-      <Container maxWidth='xl' className='bg-primary-filled'>
+      <div className='bg-primary-filled px-10'>
         <Toolbar disableGutters>
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
@@ -149,7 +148,7 @@ function Navigation() {
             />
           </Box>
         </Toolbar>
-      </Container>
+      </div>
     </AppBar>
   );
 }
