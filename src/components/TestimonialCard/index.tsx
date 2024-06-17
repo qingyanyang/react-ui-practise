@@ -3,6 +3,9 @@ import { TestimonialCard } from './TestimonialCard';
 import { SectionContainer } from '../SectionContainer';
 import { RequirementsLink } from '../RequirementsLink';
 
+/**
+ * @implements: need future api to connect data
+ */
 const testimonialsData = {
   data: [
     {

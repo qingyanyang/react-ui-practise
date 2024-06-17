@@ -1,5 +1,12 @@
 type SectionContainerProps = React.PropsWithChildren<{}>;
 
+/**
+ *
+ * @description: grediant bg container for each section
+ * @example: <SectionContainer><TestimonialCard/></SectionContainer>
+ *
+ *
+ */
 export const SectionContainer: React.FC<SectionContainerProps> = ({
   children,
 }) => {

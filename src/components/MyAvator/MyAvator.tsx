@@ -7,7 +7,7 @@ interface AvatorProps {
 
 /**
  *
- * @param props: name-> nav text content; path-> router mapping
+ * @param props: src-> img link; alt-> placement when img failed to load
  */
 const MyAvator: React.FC<AvatorProps> = ({ src, alt }) => {
   return (

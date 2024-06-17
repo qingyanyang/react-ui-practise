@@ -1,5 +1,15 @@
 import MyAvator from '../MyAvator/MyAvator';
 
+/**
+ * @description: card for display user info; long string frendly; fixed round padding value; card height grow with content when needed.
+ * @example: 
+ *        <TestimonialCard
+            avatarSrc="https:.../assets/TestimonialCard/profile-thumbnail.png"
+            name="Sarah Dole"
+            username="sarahdole"
+            content=I've been searching for high-quality abstract images for my design projects..."
+          />
+ */
 interface TestimonialCardProps {
   avatarSrc: string;
   name: string;

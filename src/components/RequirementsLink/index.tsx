@@ -2,6 +2,10 @@ interface RequirementsLinkProps {
   link: string;
 }
 
+/**
+ *
+ * @param link: requirements link for the component include figma
+ */
 export const RequirementsLink: React.FC<RequirementsLinkProps> = ({ link }) => {
   return (
     <span>
