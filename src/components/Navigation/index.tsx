@@ -9,8 +9,8 @@ import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import MenuItem from '@mui/material/MenuItem';
 import IconButton from '@mui/material/IconButton';
-import { Avatar } from '@radix-ui/themes';
 import { Link } from 'react-router-dom';
+import MyAvator from '../MyAvator/MyAvator';
 
 /**
  * Nav content
@@ -79,8 +79,8 @@ function Navigation() {
   };
 
   return (
-    <AppBar position='static'>
-      <Container maxWidth='xl' className='bg-formColor-text-filled'>
+    <AppBar position='fixed'>
+      <Container maxWidth='xl' className='bg-primary-filled'>
         <Toolbar disableGutters>
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
@@ -143,11 +143,9 @@ function Navigation() {
              * todo: need to replace the link while got production link
              *
              *  */}
-            <Avatar
-              size='3'
-              src='https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?&w=256&h=256&q=70&crop=focalpoint&fp-x=0.5&fp-y=0.3&fp-z=1&fit=crop'
-              radius='full'
-              fallback='A'
+            <MyAvator
+              src={'/assets/TestimonialCard/profile-thumbnail.png'}
+              alt={'profile-thumbnail'}
             />
           </Box>
         </Toolbar>

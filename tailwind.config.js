@@ -29,6 +29,7 @@ export default {
         DEFAULT: '#fff',
         inverted: '#0a0a0a',
         hover: '#fafafa',
+        filled: '#171717',
       },
       secondary: {
         DEFAULT: '#e5e7eb',
@@ -60,58 +61,64 @@ export default {
       warning: {
         subtle: '#fffbeb',
       },
-      lineColor: {
-        primary: '#e5e5e5',
-        secondary: '#9ca3af',
-        success: '#bbf7d0',
-        brand: {
-          solid: '#4f46e5',
-          subtle: '#c7d2fe',
-        },
-        error: {
-          subtle: '#fecaca',
-        },
-        warning: {
-          subtle: '#fde68a',
-        },
+    },
+    lineColor: {
+      primary: '#e5e5e5',
+      secondary: '#9ca3af',
+      success: '#bbf7d0',
+      brand: {
+        solid: '#4f46e5',
+        subtle: '#c7d2fe',
       },
-      iconColor: {
-        emphasize: '#404040',
-        primary: {
-          DEFAULT: '#a3a3a3',
-          hover: '#737373',
-        },
-        brand: {
-          DEFAULT: '#6366f1',
-          background: '#eef2ff',
-        },
-        success: '#15803d',
-        error: '#dc2626',
-        warning: '#facc15',
+      error: {
+        subtle: '#fecaca',
       },
-      formColor: {
-        text: {
-          title: '#404040',
-          placeholder: '#737373',
-          hint: '#737373',
-          filled: '#171717',
-          disabled: '#a3a3a3',
-          error: '#dc2626',
-        },
-        background: '#fafafa',
-        border: '#e5e5e5',
+      warning: {
+        subtle: '#fde68a',
       },
     },
-    extend: {
-      spacing: {
-        DEFAULT: '4px',
+    iconColor: {
+      emphasize: '#404040',
+      primary: {
+        DEFAULT: '#a3a3a3',
+        hover: '#737373',
       },
-      borderRadius: {
-        none: '0',
-        sm: '.125rem',
-        DEFAULT: '.25rem',
-        lg: '.5rem',
-        full: '9999px',
+      brand: {
+        DEFAULT: '#6366f1',
+        background: '#eef2ff',
+      },
+      success: '#15803d',
+      error: '#dc2626',
+      warning: '#facc15',
+    },
+    formColor: {
+      text: {
+        title: '#404040',
+        placeholder: '#737373',
+        hint: '#737373',
+        filled: '#171717',
+        disabled: '#a3a3a3',
+        error: '#dc2626',
+      },
+      background: '#fafafa',
+      border: '#e5e5e5',
+    },
+    borderColor: {
+      primary: {
+        DEFAULT: '#e5e5e5',
+      },
+    },
+    borderRadius: {
+      none: '0',
+      sm: '.125rem',
+      DEFAULT: '.25rem',
+      lg: '.5rem',
+      full: '9999px',
+    },
+    extend: {
+      boxShadow: {
+        DEFAULT:
+          '0px 1px 2px 0 rgb(0 0 0 / 0.06), 0px 1px 3px 0 rgb(0 0 0 / 0.10)',
       },
     },
   },

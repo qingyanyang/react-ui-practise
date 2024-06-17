@@ -27,3 +27,9 @@ body {
 * {
   box-sizing: border-box;
 }
+
+@layer components {
+  .short-text-ellipsis {
+    @apply whitespace-nowrap text-ellipsis max-w-40 overflow-hidden;
+  }
+}

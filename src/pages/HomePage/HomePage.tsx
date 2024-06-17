@@ -4,7 +4,7 @@ import React from 'react';
 
 function HomePage() {
   return (
-    <div className='bg-formColor-text-filled h-lvh'>
+    <div className='bg-formColor-text-filled h-screen'>
       <Navigation />
       <Outlet />
     </div>
