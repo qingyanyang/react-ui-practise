@@ -30,7 +30,7 @@ export const TestimonialCard: React.FC<TestimonialCardProps> = ({
       <div className='flex gap-4 items-center self-stretch'>
         <MyAvator src={avatarSrc} alt={'profile-thumbnail'} />
         <div className='flex flex-col'>
-          <p className='text-primary text-lg font-semibold ls short-text-ellipsis'>
+          <p className='text-primary text-lg font-semibold short-text-ellipsis'>
             {name}
           </p>
           <p className='text-secondary text-sm font-normal short-text-ellipsis'>
@@ -39,7 +39,7 @@ export const TestimonialCard: React.FC<TestimonialCardProps> = ({
         </div>
       </div>
       <div>
-        <p className='text-secondary text-base font-normal text-lines-ellipsis'>
+        <p className='text-secondary text-base font-normal text-long-lines-ellipsis'>
           {content}
         </p>
       </div>

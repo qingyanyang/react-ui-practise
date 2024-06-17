@@ -107,6 +107,7 @@ export default {
       primary: {
         DEFAULT: '#e5e5e5',
       },
+      success: '#bbf7d0',
     },
     borderRadius: {
       none: '0',
