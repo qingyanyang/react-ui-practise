@@ -17,6 +17,7 @@ interface BlogCardProps {
   labels: Array<string>;
   title: string;
   desc: string;
+  disabled: boolean;
 }
 
 export const BlogCard: React.FC<BlogCardProps> = ({
@@ -24,6 +25,7 @@ export const BlogCard: React.FC<BlogCardProps> = ({
   labels,
   title,
   desc,
+  disabled,
 }) => {
   return (
     <div
@@ -46,6 +48,7 @@ export const BlogCard: React.FC<BlogCardProps> = ({
             {desc}
           </p>
           <TextButton
+            disabled={disabled}
             text='Read more'
             icon={<ArrowForwardOutlinedIcon fontSize='small' />}
           />
