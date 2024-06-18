@@ -10,7 +10,7 @@ const testimonialsData = {
   data: [
     {
       id: 1,
-      avatarSrc: '/assets/TestimonialCard/profile-thumbnail.png',
+      avatarSrc: '/assets/imgs/TestimonialCard/profile-thumbnail.png',
       name: 'Sarah Dole',
       username: 'sarahdole',
       content:
@@ -18,7 +18,7 @@ const testimonialsData = {
     },
     {
       id: 2,
-      avatarSrc: '/assets/TestimonialCard/profile-thumbnail.png',
+      avatarSrc: '/assets/imgs/TestimonialCard/profile-thumbnail.png',
       name: 'Pablo Diego José Francisco de Paula Juan Nepomuceno María de los Remedios Cipriano de la Santísima Trinidad Ruiz y Picasso',
       username: 'pablodiegojoséfrancisco',
       content:
@@ -26,7 +26,7 @@ const testimonialsData = {
     },
     {
       id: 3,
-      avatarSrc: '/assets/TestimonialCard/profile-thumbnail.png',
+      avatarSrc: '/assets/imgs/TestimonialCard/profile-thumbnail.png',
       name: 'Jane Smith',
       username: 'janesmith',
       content:

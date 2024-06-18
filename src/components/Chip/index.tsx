@@ -9,7 +9,20 @@ interface ChipProps {
 
 /**
  *
- * @param props: src-> img link; alt-> placement when img failed to load
+ * @param props: text-> text inside chip; color-> color type; size-> chip size
+ * @example: MyChipSize {
+                Small = 'small',
+                Normal = 'normal',
+                Large = 'large',
+              }
+
+            MyColor {
+                Success = 'success',
+                Brand = 'brand',
+                Error = 'error',
+                Warning = 'warning',
+                Neutral = 'neutral',
+            }
  */
 export const MyChip: React.FC<ChipProps> = ({
   text,

@@ -16,7 +16,7 @@ const blogCardData = {
   data: [
     {
       id: 1,
-      imgSrc: '/assets/BlogCard/spacejoy-unsplash.jpg',
+      imgSrc: '/assets/imgs/BlogCard/spacejoy-unsplash.jpg',
       labels: ['Interior'],
       title: 'Top 5 Living Room Inspirations',
       desc: 'Curated vibrant colors for your living, make it pop & calm at the same time.',
@@ -24,7 +24,7 @@ const blogCardData = {
     },
     {
       id: 2,
-      imgSrc: '/assets/BlogCard/spacejoy-unsplash.jpg',
+      imgSrc: '/assets/imgs/BlogCard/spacejoy-unsplash.jpg',
       labels: ['Interior Interior Interior Interior'],
       title:
         'Curated vibrant colors for your living, make it pop & calm at the same time.',
@@ -33,16 +33,17 @@ const blogCardData = {
     },
     {
       id: 3,
-      imgSrc: '/assets/BlogCard/spacejoy-unsplash.jpg',
+      imgSrc: '/assets/imgs/BlogCard/spacejoy-unsplash.jpg',
       labels: ['Interior', 'Ideas', 'Design'],
       title: 'Top 5 Living Room Inspirations',
       desc: 'Curated vibrant colors for your living, make it pop & calm at the same time.',
       readMoreDisabled: true,
     },
   ],
-  require_link:
+  requireLink:
     'https://github.com/users/qingyanyang/projects/3?pane=issue&itemId=67543203',
 };
+
 function BlogCards() {
   return (
     <SectionContainer>
@@ -148,7 +149,7 @@ function BlogCards() {
         </div>
       </div>
       <div className='m-10 text-center'>
-        <RequirementsLink link={blogCardData.require_link} />
+        <RequirementsLink link={blogCardData.requireLink} />
       </div>
     </SectionContainer>
   );

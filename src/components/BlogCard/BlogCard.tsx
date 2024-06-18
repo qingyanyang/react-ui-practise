@@ -7,9 +7,10 @@ import { TextButton } from '../TextButton';
  * @example: 
  *        <BlogCard
             imgSrc="https:.../assets/TestimonialCard/profile-thumbnail.png"
-            labels="Sarah Dole"
-            title="sarahdole"
+            labels=['Interior', 'Ideas']
+            title="Top 5 Living Room Inspirations"
             desc=I've been searching for high-quality abstract images for my design projects..."
+            disabled=true
           />
  */
 interface BlogCardProps {
@@ -28,9 +29,7 @@ export const BlogCard: React.FC<BlogCardProps> = ({
   disabled,
 }) => {
   return (
-    <div
-      className={`w-[340px] rounded-lg bg-primary border-primary border shadow overflow-hidden`}
-    >
+    <div className='w-[340px] rounded-lg bg-primary border-primary border shadow overflow-hidden'>
       <img src={imgSrc} className='w-full h-[288px] object-cover' />
       <div className='w-full py-6 px-4 flex flex-col gap-3 items-start'>
         <div className='flex flex-col gap-2'>
