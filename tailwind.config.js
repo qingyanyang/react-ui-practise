@@ -15,14 +15,18 @@ export default {
       },
       secondary: '#525252',
       tertiary: '#737373',
-      brand: '#4338ca',
+      brand: {
+        DEFAULT: '#4338ca',
+        hover: '#3730a3',
+      },
       disabled: '#a3a3a3',
       error: {
-        DEFAULT: '#dc2626',
+        DEFAULT: '#c03934',
         emphasize: '#991b1b',
       },
-      success: '#15803d',
-      warning: '#a16207',
+      success: '#3b7b42',
+      warning: '#a05826',
+      neutral: '#525154',
     },
     backgroundColor: {
       primary: {
@@ -45,21 +49,21 @@ export default {
           DEFAULT: '#4338ca',
           emphasize: '#3730a3',
         },
-        subtle: '#eef2ff',
+        subtle: '#eff1fc',
       },
       error: {
         DEFAULT: '#dc2626',
         emphasize: '#b91c1c',
-        subtle: '#fef2f2',
+        subtle: '#fcf2f2',
       },
       success: {
-        subtle: '#f0fdf4',
+        subtle: '#f2fdf5',
       },
       neutral: {
-        subtle: '#f9fafb',
+        subtle: '#f9fbfc',
       },
       warning: {
-        subtle: '#fffbeb',
+        subtle: '#fefbed',
       },
     },
     lineColor: {
@@ -104,9 +108,16 @@ export default {
       border: '#e5e5e5',
     },
     borderColor: {
-      primary: {
-        DEFAULT: '#e5e5e5',
+      primary: '#e5e5e5',
+      success: '#cdf1d6',
+      brand: {
+        DEFAULT: '#c8d3fb',
+        light: '#e9eafb',
       },
+      transparent: 'transparent',
+      error: '#f2cfd2',
+      warning: '#f7eaa0',
+      neutral: '#e4e4e6',
     },
     borderRadius: {
       none: '0',
@@ -119,6 +130,17 @@ export default {
       boxShadow: {
         DEFAULT:
           '0px 1px 2px 0 rgb(0 0 0 / 0.06), 0px 1px 3px 0 rgb(0 0 0 / 0.10)',
+      },
+      spacing: {
+        '2px': '2px',
+        '4px': '4px',
+        '6px': '6px',
+        '8px': '8px',
+        '0.125em': '0.125em',
+        '0.5em': '0.5em',
+      },
+      borderWidth: {
+        primary: '1.5px',
       },
     },
   },

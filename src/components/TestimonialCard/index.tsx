@@ -9,24 +9,24 @@ import { RequirementsLink } from '../RequirementsLink';
 const testimonialsData = {
   data: [
     {
-      id: '1',
-      avatarSrc: '/assets/TestimonialCard/profile-thumbnail.png',
+      id: 1,
+      avatarSrc: '/assets/imgs/TestimonialCard/profile-thumbnail.png',
       name: 'Sarah Dole',
       username: 'sarahdole',
       content:
         "I've been searching for high-quality abstract images for my design projects, and I'm thrilled to have found this platform. The variety and depth of creativity are astounding!",
     },
     {
-      id: '2',
-      avatarSrc: '/assets/TestimonialCard/profile-thumbnail.png',
+      id: 2,
+      avatarSrc: '/assets/imgs/TestimonialCard/profile-thumbnail.png',
       name: 'Pablo Diego José Francisco de Paula Juan Nepomuceno María de los Remedios Cipriano de la Santísima Trinidad Ruiz y Picasso',
       username: 'pablodiegojoséfrancisco',
       content:
         "This platform offers an amazing collection of images. It's a game-changer for my design work. Highly recommend! It's a game-changer for my design work. Highly recommend! It's a game-changer for my design work.",
     },
     {
-      id: '3',
-      avatarSrc: '/assets/TestimonialCard/profile-thumbnail.png',
+      id: 3,
+      avatarSrc: '/assets/imgs/TestimonialCard/profile-thumbnail.png',
       name: 'Jane Smith',
       username: 'janesmith',
       content:

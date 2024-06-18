@@ -78,8 +78,8 @@ function Navigation() {
   };
 
   return (
-    <AppBar position='fixed'>
-      <div className='bg-primary-filled px-10'>
+    <AppBar>
+      <div className='px-10 bg-primary-filled'>
         <Toolbar disableGutters>
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
@@ -143,7 +143,7 @@ function Navigation() {
              *
              *  */}
             <MyAvator
-              src={'/assets/TestimonialCard/profile-thumbnail.png'}
+              src={'/assets/imgs/TestimonialCard/profile-thumbnail.png'}
               alt={'profile-thumbnail'}
             />
           </Box>

@@ -1,7 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import '@radix-ui/themes/styles.css';
 body {
   margin: 0;
   font-family:
@@ -30,13 +29,28 @@ body {
 
 /* customized css and tailwindcss class*/
 @layer components {
+  .short-label-ellipsis {
+    @apply whitespace-nowrap text-ellipsis max-w-20 overflow-hidden;
+  }
   .short-text-ellipsis {
     @apply whitespace-nowrap text-ellipsis max-w-40 overflow-hidden;
   }
-  .text-lines-ellipsis {
+  .text-long-lines-ellipsis {
     @apply text-ellipsis overflow-hidden;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 5;
+  }
+  .text-mid-lines-ellipsis {
+    @apply text-ellipsis overflow-hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+  .text-short-lines-ellipsis {
+    @apply text-ellipsis overflow-hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
   }
 }
