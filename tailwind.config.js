@@ -139,6 +139,9 @@ export default {
         '0.125em': '0.125em',
         '0.5em': '0.5em',
       },
+      borderWidth: {
+        primary: '1.5px',
+      },
     },
   },
   plugins: [],

@@ -7,7 +7,7 @@ import ArrowForwardOutlinedIcon from '@mui/icons-material/ArrowForwardOutlined';
 import { ArrowBack } from '@mui/icons-material';
 import { MyChip } from '../Chip';
 import Divider from '@mui/material/Divider';
-import { MyColor } from '../../util/constants';
+import { MyChipSize, MyColor } from '../../util/constants';
 
 /**
  * @implements: need future api to connect data
@@ -85,11 +85,65 @@ function BlogCards() {
           </div>
           <Divider />
           <div className='flex gap-2 mt-4'>
+            <MyChip
+              text={'chip'}
+              color={MyColor.Success}
+              size={MyChipSize.Small}
+            />
+            <MyChip
+              text={'chip'}
+              color={MyColor.Warning}
+              size={MyChipSize.Small}
+            />
+            <MyChip
+              text={'chip'}
+              color={MyColor.Error}
+              size={MyChipSize.Small}
+            />
+            <MyChip
+              text={'chip'}
+              color={MyColor.Neutral}
+              size={MyChipSize.Small}
+            />
+            <MyChip
+              text={'chip'}
+              color={MyColor.Brand}
+              size={MyChipSize.Small}
+            />
+          </div>
+          <div className='flex gap-2 mt-4'>
             <MyChip text={'chip'} color={MyColor.Success} />
             <MyChip text={'chip'} color={MyColor.Warning} />
             <MyChip text={'chip'} color={MyColor.Error} />
             <MyChip text={'chip'} color={MyColor.Neutral} />
             <MyChip text={'chip'} color={MyColor.Brand} />
+          </div>
+          <div className='flex gap-2 mt-4'>
+            <MyChip
+              text={'chip'}
+              color={MyColor.Success}
+              size={MyChipSize.Large}
+            />
+            <MyChip
+              text={'chip'}
+              color={MyColor.Warning}
+              size={MyChipSize.Large}
+            />
+            <MyChip
+              text={'chip'}
+              color={MyColor.Error}
+              size={MyChipSize.Large}
+            />
+            <MyChip
+              text={'chip'}
+              color={MyColor.Neutral}
+              size={MyChipSize.Large}
+            />
+            <MyChip
+              text={'chip'}
+              color={MyColor.Brand}
+              size={MyChipSize.Large}
+            />
           </div>
         </div>
       </div>

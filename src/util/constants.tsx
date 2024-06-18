@@ -1,3 +1,9 @@
+export enum MyChipSize {
+  Small = 'small',
+  Normal = 'normal',
+  Large = 'large',
+}
+
 export enum MyColor {
   Success = 'success',
   Brand = 'brand',
