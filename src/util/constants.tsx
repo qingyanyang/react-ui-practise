@@ -20,28 +20,28 @@ interface ColorConfig {
 
 const colorMap: Record<MyColor, ColorConfig> = {
   [MyColor.Success]: {
-    borderColor: '#cdf1d6',
-    bgColor: '#f2fdf5',
-    textColor: '#3b7b42',
+    borderColor: '#bbf7d0',
+    bgColor: '#f0fdf4',
+    textColor: '#15803d',
   },
   [MyColor.Brand]: {
-    borderColor: '#c8d3fb',
+    borderColor: '#c7d2fe',
     bgColor: '#eff1fc',
     textColor: '#4338ca',
   },
   [MyColor.Error]: {
-    borderColor: '#f2cfd2',
+    borderColor: '#fecaca',
     bgColor: '#fcf2f2',
-    textColor: '#c03934',
+    textColor: '#dc2626',
   },
   [MyColor.Warning]: {
-    borderColor: '#f7eaa0',
-    bgColor: '#fefbed',
-    textColor: '#a05826',
+    borderColor: '#fde68a',
+    bgColor: '#fffbeb',
+    textColor: '#a16207',
   },
   [MyColor.Neutral]: {
-    borderColor: '#e4e4e6',
-    bgColor: '#f9fbfc',
+    borderColor: '#e5e5e5',
+    bgColor: '#f9fafb',
     textColor: '#525154',
   },
 };

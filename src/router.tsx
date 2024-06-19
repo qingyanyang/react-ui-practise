@@ -4,6 +4,7 @@ import React from 'react';
 import TestimonialCard from './components/TestimonialCard';
 import BlogCard from './components/BlogCard';
 import NotFound from './pages/NotFoundPage';
+import ProductDetails from './components/ProductDetail';
 
 const router = createBrowserRouter([
   {
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
       {
         path: 'blog-card',
         element: <BlogCard />,
+      },
+      {
+        path: 'product-details',
+        element: <ProductDetails />,
       },
     ],
   },

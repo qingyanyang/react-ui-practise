@@ -21,11 +21,11 @@ export default {
       },
       disabled: '#a3a3a3',
       error: {
-        DEFAULT: '#c03934',
+        DEFAULT: '#dc2626',
         emphasize: '#991b1b',
       },
-      success: '#3b7b42',
-      warning: '#a05826',
+      success: '#15803d',
+      warning: '#a16207',
       neutral: '#525154',
     },
     backgroundColor: {
@@ -54,16 +54,16 @@ export default {
       error: {
         DEFAULT: '#dc2626',
         emphasize: '#b91c1c',
-        subtle: '#fcf2f2',
+        subtle: '#fef2f2',
       },
       success: {
-        subtle: '#f2fdf5',
+        subtle: '#f0fdf4',
       },
       neutral: {
-        subtle: '#f9fbfc',
+        subtle: '#f9fafb',
       },
       warning: {
-        subtle: '#fefbed',
+        subtle: '#fffbeb',
       },
     },
     lineColor: {
@@ -109,15 +109,16 @@ export default {
     },
     borderColor: {
       primary: '#e5e5e5',
-      success: '#cdf1d6',
+      secondary: '#9ca3af',
+      success: '#bbf7d0',
       brand: {
-        DEFAULT: '#c8d3fb',
-        light: '#e9eafb',
+        DEFAULT: '#c7d2fe',
+        light: '#eef2ff',
       },
       transparent: 'transparent',
-      error: '#f2cfd2',
-      warning: '#f7eaa0',
-      neutral: '#e4e4e6',
+      error: '#fecaca',
+      warning: '#fde68a',
+      neutral: '#e5e5e5',
     },
     borderRadius: {
       none: '0',
