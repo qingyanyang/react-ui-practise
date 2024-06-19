@@ -1,3 +1,3 @@
 # (in progress)
 To review the project:
-git clone dev link -> yarn install -> yarn start
+git clone -> switch to dev branch -> yarn install -> yarn start
