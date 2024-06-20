@@ -17,7 +17,7 @@ export const Counter: React.FC<CounterProps> = ({ value, callBack }) => {
       setCounter(newCounter);
       callBack(newCounter);
     } else {
-      setVisible(true); // 当按钮“禁用”时显示工具提示
+      setVisible(true);
     }
   };
 
