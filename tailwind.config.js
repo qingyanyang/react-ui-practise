@@ -1,3 +1,5 @@
+import { emphasize } from '@mui/material';
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
@@ -19,13 +21,22 @@ export default {
         DEFAULT: '#4338ca',
         hover: '#3730a3',
       },
-      disabled: '#a3a3a3',
+      disabled: {
+        DEFAULT: '#a3a3a3',
+        icon: '#e6e6e6',
+      },
       error: {
         DEFAULT: '#dc2626',
         emphasize: '#991b1b',
       },
-      success: '#15803d',
-      warning: '#a16207',
+      success: {
+        DEFAULT: '#15803d',
+        icon: '#10b981',
+      },
+      warning: {
+        DEFAULT: '#a16207',
+        icon: '#facc15',
+      },
       neutral: '#525154',
     },
     backgroundColor: {
@@ -58,12 +69,14 @@ export default {
       },
       success: {
         subtle: '#f0fdf4',
+        icon: '#10b981',
       },
       neutral: {
         subtle: '#f9fafb',
       },
       warning: {
         subtle: '#fffbeb',
+        icon: '#ca8a04',
       },
     },
     lineColor: {
@@ -107,6 +120,13 @@ export default {
       background: '#fafafa',
       border: '#e5e5e5',
     },
+    outlineColor: {
+      brand: {
+        DEFAULT: '#c7d2fe',
+        light: '#eef2ff',
+        emphasize: '#4338ca',
+      },
+    },
     borderColor: {
       primary: '#e5e5e5',
       secondary: '#9ca3af',
@@ -114,6 +134,7 @@ export default {
       brand: {
         DEFAULT: '#c7d2fe',
         light: '#eef2ff',
+        emphasize: '#4338ca',
       },
       transparent: 'transparent',
       error: '#fecaca',
@@ -128,6 +149,11 @@ export default {
       full: '9999px',
     },
     extend: {
+      aspectRatio: {
+        '592/800': '592 / 800',
+        '592/190': '592 / 190',
+        '160/190': '160 / 190',
+      },
       boxShadow: {
         DEFAULT:
           '0px 1px 2px 0 rgb(0 0 0 / 0.06), 0px 1px 3px 0 rgb(0 0 0 / 0.10)',

@@ -41,7 +41,7 @@ export const MyChip: React.FC<ChipProps> = ({
         borderColor: selectedColor.borderColor,
         backgroundColor: selectedColor.bgColor,
       }}
-      className={`self-start rounded-full py-0.125em px-0.5em border-primary`}
+      className='self-start rounded-full py-0.125em px-0.5em border-primary'
     >
       <p
         style={{ color: selectedColor.textColor }}
