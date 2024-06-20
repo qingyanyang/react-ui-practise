@@ -24,10 +24,11 @@ interface RatingProps {
 }
 export const Rating: React.FC<RatingProps> = ({ value, text, color }) => {
   return (
-    <div className='flex'>
+    <div className='flex gap-1 items-center'>
+      <p className='font-normal text-xl'>{value}</p>
       <ul className='flex gap-1'>
-        {[...Array(Math.floor(value))].map((key) => (
-          <i key={key}>
+        {[...Array(Math.floor(value))].map((_, index) => (
+          <i key={index}>
             <StarFilledIcon className={`${color} w-5 h-5`} />
           </i>
         ))}
@@ -36,8 +37,8 @@ export const Rating: React.FC<RatingProps> = ({ value, text, color }) => {
             <StarHalfFilledIcon color={color} />
           </i>
         )}
-        {[...Array(5 - Math.ceil(value))].map((key) => (
-          <i key={key}>
+        {[...Array(5 - Math.ceil(value))].map((_, index) => (
+          <i key={index}>
             <StarFilledIcon className='text-disabled-icon w-5 h-5' />
           </i>
         ))}

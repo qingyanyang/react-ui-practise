@@ -3,59 +3,43 @@ import { MyChip } from '../Chip';
 import { MyColor } from '../../util/constants';
 import { TextButton } from '../TextButton';
 import { Rating } from '../Rating';
-import { MyCheckBox } from '../CheckBox';
+import { MyGroupColorSelect } from '../GroupColorSelect';
 import { Add, Remove, RemoveCircleOutline } from '@mui/icons-material';
 import Divider from '@mui/material/Divider';
+import MyThumbnail from './MyThumbnail';
+import GroupSelectBoxes from '../GroupSelectBoxes';
+
+const thumbnailUrls = [
+  '../../assets/imgs/ProductDetails/thumbnail01.png',
+  '../../assets/imgs/ProductDetails/thumbnail02.png',
+  '../../assets/imgs/ProductDetails/thumbnail01.png',
+  '../../assets/imgs/ProductDetails/thumbnail01.png',
+  '../../assets/imgs/ProductDetails/thumbnail01.png',
+];
+const colors = [
+  { id: 0, color: 'bg-success-icon', disabled: false },
+  { id: 1, color: 'bg-warning-icon', disabled: false },
+  { id: 2, color: 'bg-error', disabled: true },
+];
+const sizes = [
+  { id: 0, value: 'XS', disabled: false },
+  { id: 1, value: 'S', disabled: true },
+  { id: 2, value: 'M', disabled: false },
+  { id: 3, value: 'L', disabled: false },
+  { id: 4, value: 'XL', disabled: false },
+];
 
 function ProductDetails() {
   return (
     <SectionContainer>
-      <div className='py-12 px-4 tablet:py-16 desktop:px-24 desktop:py-24 w-full grid gap-8  desktop:grid-cols-2 items-start bg-primary'>
-        <div className='w-full flex flex-col gap-6'>
-          <div className='w-full aspect-592/800 rounded-lg overflow-hidden'>
-            <img
-              className='w-full object-cover'
-              src='../../assets/imgs/ProductDetails/thumbnail.png'
-              alt='thumbnail'
-            />
-          </div>
-          <div className='relative w-full aspect-592/190 overflow-auto touch-pan-y'>
-            <div className='flex gap-4 h-full absolute'>
-              <button className='focus:border-[3px] focus:border-brand-emphasize h-full aspect-160/190 rounded-lg overflow-hidden'>
-                <img
-                  className='w-full'
-                  src='../../assets/imgs/ProductDetails/thumbnail.png'
-                  alt='thumbnail'
-                />
-              </button>
-              <div className='h-full aspect-160/190 rounded-lg overflow-hidden'>
-                <img
-                  className='w-full'
-                  src='../../assets/imgs/ProductDetails/thumbnail.png'
-                  alt='thumbnail'
-                />
-              </div>
-              <div className='h-full aspect-160/190 rounded-lg overflow-hidden'>
-                <img
-                  className='w-full'
-                  src='../../assets/imgs/ProductDetails/thumbnail.png'
-                  alt='thumbnail'
-                />
-              </div>
-              <div className='h-full aspect-160/190 rounded-lg overflow-hidden'>
-                <img
-                  className='w-full'
-                  src='../../assets/imgs/ProductDetails/thumbnail.png'
-                  alt='thumbnail'
-                />
-              </div>
-            </div>
-          </div>
-        </div>
+      <div className='py-12 px-4 tablet:py-16 desktop:px-24 desktop:py-24 w-full grid gap-8 desktop:grid-cols-2 items-start bg-primary'>
+        <MyThumbnail thumbnailUrls={thumbnailUrls} />
         <div className='w-full flex flex-col gap-10'>
           <div className='flex flex-col gap-8'>
             <div className='flex flex-col'>
-              <p className='mb-5 font-semibold text-5xl'>Voyager Hoodie</p>
+              <p className='mb-5 font-semibold text-3xl tablet:text-5xl'>
+                Voyager Hoodie
+              </p>
               <span className='mb-2 flex gap-2 items-baseline'>
                 <span className='font-medium text-3xl text-secondary'>$76</span>
                 <span className='font-medium text-lg line-through text-disabled'>
@@ -64,14 +48,11 @@ function ProductDetails() {
               </span>
               <MyChip text={'20% OFF'} color={MyColor.Warning} />
               <div className='mt-1 flex gap-2 items-center'>
-                <p className='font-normal text-xl'>3.5</p>
-                <div className='flex gap-1'>
-                  <Rating
-                    value={3.5}
-                    color={'text-warning-icon'}
-                    fontSize='26px'
-                  />
-                </div>
+                <Rating
+                  value={3.5}
+                  color={'text-warning-icon'}
+                  fontSize='26px'
+                />
                 <TextButton text={'See all 62 reviews'} />
               </div>
             </div>
@@ -87,8 +68,7 @@ function ProductDetails() {
                 Available Colors
               </p>
               <div className='flex gap-6'>
-                <MyCheckBox color='bg-success-icon' />
-                <MyCheckBox color='bg-warning-icon' />
+                <MyGroupColorSelect values={colors} />
               </div>
             </div>
             <div className='flex flex-col gap-4'>
@@ -96,21 +76,7 @@ function ProductDetails() {
                 Available Sizes
               </p>
               <div className='flex gap-4 flex-wrap items-center'>
-                <button className='flex justify-center w-[64px] py-3 rounded-[4px] border-primary focus:border-brand-emphasize'>
-                  <p className='font-medium text-base text-primary'>XS</p>
-                </button>
-                <button className='flex justify-center w-[64px] py-3 rounded-[4px] border-primary'>
-                  <p className='font-medium text-base text-primary'>S</p>
-                </button>
-                <button className='flex justify-center w-[64px] py-3 rounded-[4px] border-primary'>
-                  <p className='font-medium text-base text-primary'>M</p>
-                </button>
-                <button className='flex justify-center w-[64px] py-3 rounded-[4px] border-primary'>
-                  <p className='font-medium text-base text-primary'>L</p>
-                </button>
-                <button className='flex justify-center w-[64px] py-3 rounded-[4px] border-primary'>
-                  <p className='font-medium text-base text-primary'>XL</p>
-                </button>
+                <GroupSelectBoxes values={sizes} />
               </div>
             </div>
             <div className='flex flex-col gap-4'>
