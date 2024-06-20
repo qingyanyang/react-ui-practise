@@ -97,7 +97,14 @@ function ProductDetails() {
                 <GroupSelectBoxes values={sizes} callBack={getSelectedSize} />
               </div>
             </div>
-            <div className='flex flex-col gap-4'>
+            <div className='relative flex flex-col gap-4'>
+              {/* <div
+                className='font-medium text-xs absolute text-primary-invert left-[48px] bottom-[42px] bg-primary-inverted px-3 py-2 rounded-lg z-10 shadow-toolTip
+'
+              >
+                Insufficient stock
+              </div>
+              <div className='absolute left-[100px] bottom-[39px] rounded-[1px] bg-primary-inverted w-4 h-4 rotate-45 shadow-toolTip'></div> */}
               <p className='text-tertiary font-normal text-sm'>Quantity</p>
               <Counter value={8} callBack={getCounterValue} />
             </div>

@@ -1,34 +1,40 @@
 import { Remove, Add } from '@mui/icons-material';
 import { useState } from 'react';
+import Tooltip from '../ToolTip';
+
 interface CounterProps {
   value: number;
   callBack: (counter: number) => void;
 }
+
 export const Counter: React.FC<CounterProps> = ({ value, callBack }) => {
   const [counter, setCounter] = useState(1);
+  const [visible, setVisible] = useState(false);
 
-  const handleIncreament = () => {
+  const handleIncrement = () => {
     if (counter < value) {
       const newCounter = counter + 1;
       setCounter(newCounter);
       callBack(newCounter);
+    } else {
+      setVisible(true); // 当按钮“禁用”时显示工具提示
     }
   };
 
-  const handleDecreament = () => {
+  const handleDecrement = () => {
     if (counter > 1) {
       const newCounter = counter - 1;
       setCounter(newCounter);
       callBack(newCounter);
     }
   };
+
   return (
     <div className='bg-tertiary self-start flex min-w-[125px] border-primary rounded-[4px] p-0.5 gap-3 justify-between items-center'>
       <div className='px-1.5'>
         <button
-          onClick={handleDecreament}
-          disabled={counter === 1}
-          className='disabled:text-disabled flex justify-center text-secondary'
+          onClick={handleDecrement}
+          className={`flex justify-center  ${counter === 1 ? 'text-disabled cursor-default' : 'text-secondary'}`}
         >
           <Remove fontSize='small' />
         </button>
@@ -36,15 +42,22 @@ export const Counter: React.FC<CounterProps> = ({ value, callBack }) => {
       <div className='py-1.5 px-3'>
         <div className='font-medium text-sm text-secondary'>{counter}</div>
       </div>
-      <div className='px-1.5'>
-        <button
-          onClick={handleIncreament}
-          disabled={counter === value}
-          className='disabled:text-disabled flex justify-center text-secondary'
-        >
-          <Add fontSize='small' />
-        </button>
-      </div>
+      <Tooltip
+        setVisible={setVisible}
+        visible={visible}
+        text={'Insufficient stock'}
+      >
+        <div className='px-1.5'>
+          <button
+            onClick={handleIncrement}
+            className={`flex justify-center  relative ${counter === value ? 'text-disabled cursor-default' : 'text-secondary'}`}
+          >
+            <Add fontSize='small' />
+          </button>
+        </div>
+      </Tooltip>
     </div>
   );
 };
+
+export default Counter;
