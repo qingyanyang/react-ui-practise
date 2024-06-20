@@ -4,10 +4,13 @@ import { MyColor } from '../../util/constants';
 import { TextButton } from '../TextButton';
 import { Rating } from '../Rating';
 import { MyGroupColorSelect } from '../GroupColorSelect';
-import { Add, Remove, RemoveCircleOutline } from '@mui/icons-material';
+import { RemoveCircleOutline } from '@mui/icons-material';
 import Divider from '@mui/material/Divider';
 import MyThumbnail from './MyThumbnail';
 import GroupSelectBoxes from '../GroupSelectBoxes';
+import PrimaryButton from '../PrimaryButton';
+import SecondaryButton from '../SecondaryButton';
+import { Counter } from '../Counter';
 
 const thumbnailUrls = [
   '../../assets/imgs/ProductDetails/thumbnail01.png',
@@ -30,6 +33,18 @@ const sizes = [
 ];
 
 function ProductDetails() {
+  const getCounterValue = (counter: number): void => {
+    console.log(counter);
+  };
+
+  const getSelectedSize = (index: number | string | null): void => {
+    console.log(index);
+  };
+
+  const getSelectedColor = (index: number | string | null): void => {
+    console.log(index);
+  };
+
   return (
     <SectionContainer>
       <div className='py-12 px-4 tablet:py-16 desktop:px-24 desktop:py-24 w-full grid gap-8 desktop:grid-cols-2 items-start bg-primary'>
@@ -68,7 +83,10 @@ function ProductDetails() {
                 Available Colors
               </p>
               <div className='flex gap-6'>
-                <MyGroupColorSelect values={colors} />
+                <MyGroupColorSelect
+                  values={colors}
+                  callBack={getSelectedColor}
+                />
               </div>
             </div>
             <div className='flex flex-col gap-4'>
@@ -76,30 +94,15 @@ function ProductDetails() {
                 Available Sizes
               </p>
               <div className='flex gap-4 flex-wrap items-center'>
-                <GroupSelectBoxes values={sizes} />
+                <GroupSelectBoxes values={sizes} callBack={getSelectedSize} />
               </div>
             </div>
             <div className='flex flex-col gap-4'>
               <p className='text-tertiary font-normal text-sm'>Quantity</p>
-              <div className='bg-tertiary self-start flex min-w-[125px] border-primary rounded-[4px] p-0.5 gap-3 justify-between items-center'>
-                <div className='px-1.5'>
-                  <button className='flex justify-center text-secondary'>
-                    <Remove fontSize='small' />
-                  </button>
-                </div>
-                <div className='py-1.5 px-3'>
-                  <div className='font-medium text-sm text-secondary'>1</div>
-                </div>
-                <div className='px-1.5'>
-                  <button className='flex justify-center text-secondary'>
-                    <Add fontSize='small' />
-                  </button>
-                </div>
-              </div>
+              <Counter value={8} callBack={getCounterValue} />
             </div>
-            <button className='bg-brand-primary p-4 rounded-[4px] font-medium text-lg text-primary-invert'>
-              Add to Cart
-            </button>
+            <PrimaryButton text={'Add to Cart'} />
+            <SecondaryButton text={'Cancel'} />
           </div>
           <div className='flex flex-col gap-8'>
             <div className='flex flex-col gap-2'>

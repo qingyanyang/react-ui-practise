@@ -7,21 +7,27 @@ interface States {
 }
 interface GroupSelectBoxesProps {
   values: States[];
+  callBack: (index: number | string | null) => void;
 }
 
-const GroupSelectBoxes: React.FC<GroupSelectBoxesProps> = ({ values }) => {
+const GroupSelectBoxes: React.FC<GroupSelectBoxesProps> = ({
+  values,
+  callBack,
+}) => {
   const [selectedIndex, setSelectedIndex] = useState<number | string | null>(
     null,
   );
 
   const handleSelect = (index: number | string) => {
     if (index === selectedIndex) {
-      setSelectedIndex(null);
+      const newIndex = null;
+      setSelectedIndex(newIndex);
+      callBack(newIndex);
     } else {
-      setSelectedIndex(index);
+      const newIndex = index;
+      setSelectedIndex(newIndex);
+      callBack(newIndex);
     }
-
-    console.log(index);
   };
 
   return (
