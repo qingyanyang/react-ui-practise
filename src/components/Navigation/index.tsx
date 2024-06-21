@@ -17,10 +17,8 @@ import MyAvator from '../MyAvator/MyAvator';
 const links = [
   { id: '1', name: 'testimonial card', path: '/' },
   { id: '2', name: 'blog card', path: '/blog-card' },
-  { id: '3', name: 'product details', path: '/product-details' },
-  { id: '4', name: 'blog card', path: '/blog-card' },
-  { id: '5', name: 'blog card', path: '/blog-card' },
-  { id: '6', name: 'blog card', path: '/blog-card' },
+  { id: '3', name: 'components', path: '/components-combination' },
+  { id: '4', name: 'product details', path: '/product-details' },
 ];
 
 /**

@@ -17,11 +17,13 @@ const PrimaryButton: React.FC<PrimaryButtonProps> = ({
     <button
       disabled={disabled}
       className={`
+        block
+        w-full
         ${color} 
         ${fontSize}
-        ${disabled ? 'bg-disabled text-disabled' : 'hover:bg-brand-primary-emphasize'}
+        ${disabled ? 'bg-disabled text-disabled' : 'hover:bg-brand-primary-emphasize text-primary-invert'}
         ring-4 ring-transparent focus:bg-brand-primary-emphasize focus:ring-indigo-50 
-        p-[0.75em] rounded-[4px] font-medium text-primary-invert
+        p-[0.75em] rounded-[4px] font-medium 
       `}
     >
       {text}

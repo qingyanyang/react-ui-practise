@@ -92,11 +92,7 @@ function ProductDetails() {
               </span>
               <MyChip text={'20% OFF'} color={MyColor.Warning} />
               <div className='mt-1 flex gap-2 items-center'>
-                <Rating
-                  value={3.5}
-                  color={'text-warning-icon'}
-                  fontSize='26px'
-                />
+                <Rating value={3.5} />
                 <TextButton text={'See all 62 reviews'} />
               </div>
             </div>

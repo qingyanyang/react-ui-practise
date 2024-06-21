@@ -15,7 +15,8 @@ const SecondartButton: React.FC<ButtonProps> = ({
     <button
       disabled={disabled}
       className={`
-
+        block
+        w-full
         ${fontSize}
         bg-primary border-primary text-primary
         p-[0.75em] rounded-[4px] font-medium shadow 

@@ -2,16 +2,22 @@ import React from 'react';
 import { StarFilledIcon } from '@radix-ui/react-icons';
 
 interface StarHalfFilledIconProps {
-  color: string;
+  icon: React.ElementType;
+  valueColor: string;
+  emptyColor: string;
 }
 
-const StarHalfFilledIcon: React.FC<StarHalfFilledIconProps> = ({ color }) => {
+const StarHalfFilledIcon: React.FC<StarHalfFilledIconProps> = ({
+  icon: Icon,
+  valueColor,
+  emptyColor,
+}) => {
   return (
     <span className='relative'>
       <span className='w-1/2 h-full absolute overflow-hidden'>
-        <StarFilledIcon className={`${color} w-5 h-5`} />
+        <Icon className={`${valueColor} w-5 h-5`} />
       </span>
-      <StarFilledIcon className='text-disabled-icon w-5 h-5' />
+      <Icon className={`${emptyColor} w-5 h-5`} />
     </span>
   );
 };
@@ -19,31 +25,49 @@ const StarHalfFilledIcon: React.FC<StarHalfFilledIconProps> = ({ color }) => {
 interface RatingProps {
   value: number;
   text?: string;
-  color: string;
-  fontSize?: string;
+  icon?: React.ElementType;
+  valueColor?: string;
+  emptyColor?: string;
 }
-export const Rating: React.FC<RatingProps> = ({ value, text, color }) => {
+
+export const Rating: React.FC<RatingProps> = ({
+  value,
+  text,
+  icon: Icon = StarFilledIcon,
+  valueColor = 'text-warning-icon',
+  emptyColor = 'text-disabled-icon',
+}) => {
+  if (value > 5) {
+    value = 5;
+  }
   return (
-    <div className='flex gap-1 items-center'>
-      <p className='font-normal text-xl'>{value}</p>
-      <ul className='flex gap-1'>
+    <div className='flex gap-3 items-center'>
+      <p className='font-normal text-xl'>{value.toFixed(1)}</p>
+      <span className='flex gap-1'>
         {[...Array(Math.floor(value))].map((_, index) => (
           <i key={index}>
-            <StarFilledIcon className={`${color} w-5 h-5`} />
+            <Icon className={`${valueColor} w-5 h-5`} />
           </i>
         ))}
-        {value - Math.floor(value) && (
+        {value - Math.floor(value) !== 0 && (
           <i>
-            <StarHalfFilledIcon color={color} />
+            <StarHalfFilledIcon
+              icon={Icon}
+              valueColor={valueColor}
+              emptyColor={emptyColor}
+            />
           </i>
         )}
         {[...Array(5 - Math.ceil(value))].map((_, index) => (
           <i key={index}>
-            <StarFilledIcon className='text-disabled-icon w-5 h-5' />
+            <Icon className={`${emptyColor} w-5 h-5`} />
           </i>
         ))}
-      </ul>
-      <div>{text && text}</div>
+      </span>
+
+      {text && <div className='ml-2 text-tertiary text-sm'>{text}</div>}
     </div>
   );
 };
+
+export default Rating;
