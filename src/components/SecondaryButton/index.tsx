@@ -18,9 +18,9 @@ const SecondartButton: React.FC<ButtonProps> = ({
         block
         w-full
         ${fontSize}
-        bg-primary border-primary text-primary
+        border-primary 
         p-[0.75em] rounded-[4px] font-medium shadow 
-        ${disabled ? 'shadow-none bg-disabled border-none text-disabled' : 'hover:bg-primary-hover'}
+        ${disabled ? 'shadow-none bg-disabled border-none text-disabled' : 'hover:bg-primary-hover text-primary bg-primary '}
         ring-4 ring-transparent focus:bg-primary-hover focus:ring-indigo-50
       `}
     >
