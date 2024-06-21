@@ -2,6 +2,7 @@ import React from 'react';
 import { TestimonialCard } from './TestimonialCard';
 import { SectionContainer } from '../SectionContainer';
 import { RequirementsLink } from '../RequirementsLink';
+import { GridContainer } from '../GridContainer';
 
 /**
  * @implements: need future api to connect data
@@ -19,18 +20,18 @@ const testimonialsData = {
     {
       id: 2,
       avatarSrc: '/assets/imgs/TestimonialCard/profile-thumbnail.png',
-      name: 'Pablo Diego José Francisco de Paula Juan Nepomuceno María de los Remedios Cipriano de la Santísima Trinidad Ruiz y Picasso',
-      username: 'pablodiegojoséfrancisco',
-      content:
-        "This platform offers an amazing collection of images. It's a game-changer for my design work. Highly recommend! It's a game-changer for my design work. Highly recommend! It's a game-changer for my design work.",
-    },
-    {
-      id: 3,
-      avatarSrc: '/assets/imgs/TestimonialCard/profile-thumbnail.png',
       name: 'Jane Smith',
       username: 'janesmith',
       content:
         'I love the diverse range of abstract images available. It has really helped me to elevate my design projects.',
+    },
+    {
+      id: 3,
+      avatarSrc: '/assets/imgs/TestimonialCard/profile-thumbnail.png',
+      name: 'Pablo Diego José Francisco de Paula Juan Nepomuceno María de los Remedios Cipriano de la Santísima Trinidad Ruiz y Picasso',
+      username: 'pablodiegojoséfrancisco',
+      content:
+        "This platform offers an amazing collection of images. It's a game-changer for my design work. Highly recommend! It's a game-changer for my design work. Highly recommend! It's a game-changer for my design work.",
     },
   ],
   require_link:
@@ -40,7 +41,7 @@ const testimonialsData = {
 function TestimonialCards() {
   return (
     <SectionContainer>
-      <div className='mt-10 grid gap-10 grid-cols-1 tablet:grid-cols-2 desktop:grid-cols-3 items-start justify-center'>
+      <GridContainer>
         {testimonialsData.data.map((testimonialData) => (
           <TestimonialCard
             key={testimonialData.id}
@@ -50,10 +51,8 @@ function TestimonialCards() {
             content={testimonialData.content}
           />
         ))}
-      </div>
-      <div className='m-10 text-center'>
-        <RequirementsLink link={testimonialsData.require_link} />
-      </div>
+      </GridContainer>
+      <RequirementsLink link={testimonialsData.require_link} />
     </SectionContainer>
   );
 }

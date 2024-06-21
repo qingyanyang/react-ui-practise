@@ -2,6 +2,7 @@ import React from 'react';
 import { SectionContainer } from '../SectionContainer';
 import { RequirementsLink } from '../RequirementsLink';
 import { BlogCard } from './BlogCard';
+import { GridContainer } from '../GridContainer';
 
 /**
  * @implements: need future api to connect data
@@ -41,7 +42,7 @@ const blogCardData = {
 function BlogCards() {
   return (
     <SectionContainer>
-      <div className='grid gap-10 grid-cols-1 tablet:grid-cols-2 desktop:grid-cols-3 items-start justify-center'>
+      <GridContainer>
         {blogCardData.data.map((blogCard) => (
           <BlogCard
             key={blogCard.id}
@@ -52,10 +53,8 @@ function BlogCards() {
             disabled={blogCard.readMoreDisabled}
           />
         ))}
-      </div>
-      <div className='m-10 text-center'>
-        <RequirementsLink link={blogCardData.requireLink} />
-      </div>
+      </GridContainer>
+      <RequirementsLink link={blogCardData.requireLink} />
     </SectionContainer>
   );
 }

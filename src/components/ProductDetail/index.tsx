@@ -10,6 +10,7 @@ import PrimaryButton from '../PrimaryButton';
 import SecondaryButton from '../SecondaryButton';
 import { Counter } from '../Counter';
 import Accordion from '../Accordion';
+import { RequirementsLink } from '../RequirementsLink';
 
 const thumbnailUrls = [
   '../../assets/imgs/ProductDetails/thumbnail01.png',
@@ -132,6 +133,11 @@ function ProductDetails() {
           <Accordion data={accordionData} />
         </div>
       </div>
+      <RequirementsLink
+        link={
+          'https://github.com/users/qingyanyang/projects/3/views/1?pane=issue&itemId=67543327'
+        }
+      />
     </SectionContainer>
   );
 }

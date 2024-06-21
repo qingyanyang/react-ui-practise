@@ -15,6 +15,8 @@ import { MyChipSize, MyColor } from '../../util/constants';
 import PrimaryButton from '../PrimaryButton';
 import SecondaryButton from '../SecondaryButton';
 import Accordion from '../Accordion';
+import { GridContainer } from '../GridContainer';
+import { ComponentCard } from './ComponentCard';
 
 const colors = [
   { id: 0, color: 'bg-success-icon', disabled: false, label: 'green' },
@@ -109,113 +111,98 @@ const RatingCard: React.FC = () => {
 
   return (
     <SectionContainer>
-      <div className='grid gap-10 grid-cols-1 tablet:grid-cols-2 desktop:grid-cols-3 items-start justify-center'>
-        <div className='flex flex-col gap-10'>
-          <div
-            className={`w-[340px] rounded-lg bg-primary border-primary border shadow overflow-hidden px-4 py-6`}
-          >
-            <p className='mb-4 font-semibold'>Text Button:</p>
-            <Divider sx={{ borderBottomWidth: 2 }} />
-            <div className='mb-4'></div>
-            <div className='mb-2 flex flex-col gap-2'>
-              <TextButton text={'Read more'} />
-              <TextButton
-                disabled={false}
-                text='Hover me'
-                icon={<ArrowBack fontSize='small' />}
-              />
-              <TextButton
-                disabled={false}
-                text='Click me'
-                icon={<ArrowBack fontSize='small' />}
-              />
-              <TextButton
-                disabled={false}
-                text='Read more and more'
-                icon={<ArrowForwardOutlinedIcon fontSize='small' />}
-              />
-              <TextButton
-                disabled={true}
-                text='Disabled'
-                icon={<ArrowForwardOutlinedIcon fontSize='small' />}
-              />
-            </div>
+      <GridContainer>
+        <ComponentCard title={'Text Button:'}>
+          <div className='mb-2 flex flex-col gap-2'>
+            <TextButton text={'Read more'} />
+            <TextButton
+              disabled={false}
+              text='Hover me'
+              icon={<ArrowBack fontSize='small' />}
+            />
+            <TextButton
+              disabled={false}
+              text='Click me'
+              icon={<ArrowBack fontSize='small' />}
+            />
+            <TextButton
+              disabled={false}
+              text='Read more and more'
+              icon={<ArrowForwardOutlinedIcon fontSize='small' />}
+            />
+            <TextButton
+              disabled={true}
+              text='Disabled'
+              icon={<ArrowForwardOutlinedIcon fontSize='small' />}
+            />
           </div>
-          <div
-            className={`w-[340px] rounded-lg bg-primary border-primary border shadow overflow-hidden px-4 py-6`}
-          >
-            <p className='mb-4 font-semibold'>Chip:</p>
-            <Divider sx={{ borderBottomWidth: 2 }} />
-            <div className='mb-4'></div>
-            <div className='flex gap-2 mt-4'>
-              <MyChip
-                text={'chip'}
-                color={MyColor.Success}
-                size={MyChipSize.Small}
-              />
-              <MyChip
-                text={'chip'}
-                color={MyColor.Warning}
-                size={MyChipSize.Small}
-              />
-              <MyChip
-                text={'chip'}
-                color={MyColor.Error}
-                size={MyChipSize.Small}
-              />
-              <MyChip
-                text={'chip'}
-                color={MyColor.Neutral}
-                size={MyChipSize.Small}
-              />
-              <MyChip
-                text={'chip'}
-                color={MyColor.Brand}
-                size={MyChipSize.Small}
-              />
-            </div>
-            <div className='flex gap-2 mt-4'>
-              <MyChip text={'chip'} color={MyColor.Success} />
-              <MyChip text={'chip'} color={MyColor.Warning} />
-              <MyChip text={'chip'} color={MyColor.Error} />
-              <MyChip text={'chip'} color={MyColor.Neutral} />
-              <MyChip text={'chip'} color={MyColor.Brand} />
-            </div>
-            <div className='flex gap-2 mt-4'>
-              <MyChip
-                text={'chip'}
-                color={MyColor.Success}
-                size={MyChipSize.Large}
-              />
-              <MyChip
-                text={'chip'}
-                color={MyColor.Warning}
-                size={MyChipSize.Large}
-              />
-              <MyChip
-                text={'chip'}
-                color={MyColor.Error}
-                size={MyChipSize.Large}
-              />
-              <MyChip
-                text={'chip'}
-                color={MyColor.Neutral}
-                size={MyChipSize.Large}
-              />
-              <MyChip
-                text={'chip'}
-                color={MyColor.Brand}
-                size={MyChipSize.Large}
-              />
-            </div>
+        </ComponentCard>
+
+        <ComponentCard title={'Chip:'}>
+          <div className='flex gap-2 mt-4'>
+            <MyChip
+              text={'chip'}
+              color={MyColor.Success}
+              size={MyChipSize.Small}
+            />
+            <MyChip
+              text={'chip'}
+              color={MyColor.Warning}
+              size={MyChipSize.Small}
+            />
+            <MyChip
+              text={'chip'}
+              color={MyColor.Error}
+              size={MyChipSize.Small}
+            />
+            <MyChip
+              text={'chip'}
+              color={MyColor.Neutral}
+              size={MyChipSize.Small}
+            />
+            <MyChip
+              text={'chip'}
+              color={MyColor.Brand}
+              size={MyChipSize.Small}
+            />
           </div>
-        </div>
-        <div
-          className={`w-[340px] rounded-lg bg-primary border-primary border shadow overflow-hidden px-4 py-6`}
-        >
-          <p className='mb-4 font-semibold'>Rating:</p>
-          <Divider sx={{ borderBottomWidth: 2 }} />
-          <div className='mb-4'></div>
+          <div className='flex gap-2 mt-4'>
+            <MyChip text={'chip'} color={MyColor.Success} />
+            <MyChip text={'chip'} color={MyColor.Warning} />
+            <MyChip text={'chip'} color={MyColor.Error} />
+            <MyChip text={'chip'} color={MyColor.Neutral} />
+            <MyChip text={'chip'} color={MyColor.Brand} />
+          </div>
+          <div className='flex gap-2 mt-4'>
+            <MyChip
+              text={'chip'}
+              color={MyColor.Success}
+              size={MyChipSize.Large}
+            />
+            <MyChip
+              text={'chip'}
+              color={MyColor.Warning}
+              size={MyChipSize.Large}
+            />
+            <MyChip
+              text={'chip'}
+              color={MyColor.Error}
+              size={MyChipSize.Large}
+            />
+            <MyChip
+              text={'chip'}
+              color={MyColor.Neutral}
+              size={MyChipSize.Large}
+            />
+            <MyChip
+              text={'chip'}
+              color={MyColor.Brand}
+              size={MyChipSize.Large}
+            />
+          </div>
+        </ComponentCard>
+
+        <ComponentCard title={'Rating:'}>
           <Rating value={0} />
           <Rating value={1} />
           <Rating value={3.5} />
@@ -264,13 +251,9 @@ const RatingCard: React.FC = () => {
             valueColor='text-error'
             text='very good'
           />
-        </div>
-        <div
-          className={`w-[340px] rounded-lg bg-primary border-primary border shadow overflow-hidden px-4 py-6`}
-        >
-          <p className='mb-4 font-semibold'>Group select:</p>
-          <Divider sx={{ borderBottomWidth: 2 }} />
-          <div className='mb-4'></div>
+        </ComponentCard>
+
+        <ComponentCard title={'Radio:'}>
           <MyGroupColorSelect values={colors} callBack={getSelectedColor} />
           <p className='mt-8 mb-4'>
             {selectedColorIndex !== null
@@ -299,13 +282,9 @@ const RatingCard: React.FC = () => {
                 } `
               : 'Please select a size'}
           </p>
-        </div>
-        <div
-          className={`w-[340px] rounded-lg bg-primary border-primary border shadow overflow-hidden px-4 py-6`}
-        >
-          <p className='mb-4 font-semibold'>Counter:</p>
-          <Divider sx={{ borderBottomWidth: 2 }} />
-          <div className='mb-4'></div>
+        </ComponentCard>
+
+        <ComponentCard title={'Counter:'}>
           <Counter value={8} callBack={getCounterValue01} />
           <p className='mt-8 mb-4'>{`quantity selected: ${inputCounter01}`}</p>
           <Divider />
@@ -320,45 +299,35 @@ const RatingCard: React.FC = () => {
           <div className='mb-4'></div>
           <Counter value={0} callBack={getCounterValue01} />
           <p className='mt-8 mb-4'>{`quantity selected: ${0}`}</p>
-        </div>
-        <div
-          className={`w-[340px] rounded-lg bg-primary border-primary border shadow overflow-hidden px-4 py-6`}
-        >
-          <p className='mb-4 font-semibold'>Primary Button:</p>
-          <Divider sx={{ borderBottomWidth: 2 }} />
-          <div className='mb-4'></div>
+        </ComponentCard>
+
+        <ComponentCard title={'Primary Button:'}>
           <div className='flex flex-col gap-4'>
             <PrimaryButton text={'Add to Cart'} />
             <PrimaryButton text={'Hover Me'} />
             <PrimaryButton text={'Click Me'} />
             <PrimaryButton text={'Disabled'} disabled={true} />
           </div>
-        </div>
-        <div
-          className={`w-[340px] rounded-lg bg-primary border-primary border shadow overflow-hidden px-4 py-6`}
-        >
-          <p className='mb-4 font-semibold'>Secondary Button:</p>
-          <Divider sx={{ borderBottomWidth: 2 }} />
-          <div className='mb-4'></div>
+        </ComponentCard>
+
+        <ComponentCard title={'Secondary Button:'}>
           <div className='flex flex-col gap-4'>
             <SecondaryButton text={'Cancel'} />
             <SecondaryButton text={'Hover Me'} />
             <SecondaryButton text={'Click Me'} />
             <SecondaryButton text={'Disabled'} disabled={true} />
           </div>
-        </div>
-        <div
-          className={`w-[340px] rounded-lg bg-primary border-primary border shadow overflow-hidden px-4 py-6`}
-        >
-          <p className='mb-4 font-semibold'>Accordion:</p>
-          <Divider sx={{ borderBottomWidth: 2 }} />
-          <div className='mb-4'></div>
+        </ComponentCard>
+
+        <ComponentCard title={'Accordion:'}>
           <Accordion data={accordionData} />
-        </div>
-      </div>
-      <div className='m-10 text-center'>
-        <RequirementsLink link={''} />
-      </div>
+        </ComponentCard>
+      </GridContainer>
+      <RequirementsLink
+        link={
+          'https://github.com/users/qingyanyang/projects/3/views/1?pane=issue&itemId=67543327'
+        }
+      />
     </SectionContainer>
   );
 };

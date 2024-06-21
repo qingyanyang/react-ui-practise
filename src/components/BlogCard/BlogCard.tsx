@@ -29,7 +29,7 @@ export const BlogCard: React.FC<BlogCardProps> = ({
   disabled,
 }) => {
   return (
-    <div className='w-[340px] rounded-lg bg-primary border-primary border shadow overflow-hidden'>
+    <div className='break-inside-avoid w-[340px] rounded-lg bg-primary border-primary border shadow overflow-hidden'>
       <img src={imgSrc} className='w-full h-[288px] object-cover' />
       <div className='w-full py-6 px-4 flex flex-col gap-3 items-start'>
         <div className='flex flex-col gap-2'>
