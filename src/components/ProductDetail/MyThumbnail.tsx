@@ -26,7 +26,7 @@ const MyThumbnail: React.FC<ThumbnailProps> = ({ thumbnailUrls }) => {
             <button
               key={index}
               onClick={() => handleOnclick(index)}
-              className='focus:border-[3px] focus:border-brand-emphasize h-full desktop:aspect-160/190 tablet:aspect-188/190 mobile:aspect-80/120 rounded-lg overflow-hidden'
+              className={`${selectedIndex === index && 'border-[3px] border-brand-emphasize'} h-full desktop:aspect-160/190 tablet:aspect-188/190 mobile:aspect-80/120 rounded-lg overflow-hidden`}
             >
               <img
                 className='h-full w-full object-cover'
