@@ -27,7 +27,7 @@ export const Counter: React.FC<CounterProps> = ({
   };
 
   const handleDecrement = () => {
-    if (counter > 1) {
+    if (counter > 0) {
       const newCounter = counter - 1;
       setCounter(newCounter);
       callBack(newCounter);
@@ -40,7 +40,7 @@ export const Counter: React.FC<CounterProps> = ({
         <div className='px-1.5'>
           <button
             onClick={handleDecrement}
-            className={`flex justify-center  ${counter === 1 ? 'text-disabled cursor-default' : 'text-secondary'}`}
+            className={`flex justify-center  ${counter === 0 ? 'text-disabled cursor-default' : 'text-secondary'}`}
           >
             <Remove fontSize='small' />
           </button>
@@ -56,7 +56,7 @@ export const Counter: React.FC<CounterProps> = ({
           <div className='px-1.5'>
             <button
               onClick={handleIncrement}
-              className={`flex justify-center  relative ${counter === value || value === 0 ? 'text-disabled cursor-default' : 'text-secondary'}`}
+              className={`flex justify-center relative ${counter === value || value === initialValue ? 'text-disabled cursor-default' : 'text-secondary'}`}
             >
               <Add fontSize='small' />
             </button>

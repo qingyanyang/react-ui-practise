@@ -11,13 +11,36 @@ import SecondaryButton from '../SecondaryButton';
 import { Counter } from '../Counter';
 import Accordion from '../Accordion';
 import { RequirementsLink } from '../RequirementsLink';
+import { useState } from 'react';
 
 const thumbnailUrls = [
-  '../../assets/imgs/ProductDetails/thumbnail01.png',
-  '../../assets/imgs/ProductDetails/thumbnail02.png',
-  '../../assets/imgs/ProductDetails/thumbnail01.png',
-  '../../assets/imgs/ProductDetails/thumbnail01.png',
-  '../../assets/imgs/ProductDetails/thumbnail01.png',
+  {
+    id: 0,
+    img_urls: [
+      '../../assets/imgs/ProductDetails/voyager-hoodie-1.jpg',
+      '../../assets/imgs/ProductDetails/voyager-hoodie-2.jpg',
+      '../../assets/imgs/ProductDetails/voyager-hoodie-3.jpg',
+      '../../assets/imgs/ProductDetails/voyager-hoodie-4.jpg',
+    ],
+  },
+  {
+    id: 1,
+    img_urls: [
+      '../../assets/imgs/ProductDetails/voyager-hoodie-brown-1.jpg',
+      '../../assets/imgs/ProductDetails/voyager-hoodie-brown-2.jpg',
+      '../../assets/imgs/ProductDetails/voyager-hoodie-brown-3.jpg',
+      '../../assets/imgs/ProductDetails/voyager-hoodie-brown-4.jpg',
+    ],
+  },
+  {
+    id: 2,
+    img_urls: [
+      '../../assets/imgs/ProductDetails/voyager-hoodie-red-1.jpg',
+      '../../assets/imgs/ProductDetails/voyager-hoodie-red-2.jpg',
+      '../../assets/imgs/ProductDetails/voyager-hoodie-red-3.jpg',
+      '../../assets/imgs/ProductDetails/voyager-hoodie-red-4.jpg',
+    ],
+  },
 ];
 const colors = [
   { id: 0, color: 'bg-success-icon', disabled: false },
@@ -63,22 +86,32 @@ const accordionData = [
   },
 ];
 function ProductDetails() {
+  const [colorIndex, setColorIndex] = useState<number | string>(0);
+  const [sizeIndex, setSizeIndex] = useState<number | string>(0);
   const getCounterValue = (counter: number): void => {
     console.log(counter);
   };
 
-  const getSelectedSize = (index: number | string | null): void => {
-    console.log(index);
+  const getSelectedSize = (index: number | string): void => {
+    setSizeIndex(index);
+    console.log(sizeIndex);
   };
 
-  const getSelectedColor = (index: number | string | null): void => {
+  const getSelectedColor = (index: number | string): void => {
+    setColorIndex(index);
     console.log(index);
   };
 
   return (
     <SectionContainer>
       <div className='py-12 px-4 tablet:py-16 desktop:px-24 desktop:py-24 w-full grid gap-8 desktop:grid-cols-2 items-start bg-primary'>
-        <MyThumbnail thumbnailUrls={thumbnailUrls} />
+        <MyThumbnail
+          thumbnailUrls={
+            thumbnailUrls.filter(
+              (thumbnailUrl) => thumbnailUrl.id === colorIndex,
+            )[0].img_urls
+          }
+        />
         <div className='w-full flex flex-col gap-10'>
           <div className='flex flex-col gap-8'>
             <div className='flex flex-col'>

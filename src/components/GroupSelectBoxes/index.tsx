@@ -7,27 +7,19 @@ interface States {
 }
 interface GroupSelectBoxesProps {
   values: States[];
-  callBack: (index: number | string | null) => void;
+  callBack: (index: number | string) => void;
 }
 
 const GroupSelectBoxes: React.FC<GroupSelectBoxesProps> = ({
   values,
   callBack,
 }) => {
-  const [selectedIndex, setSelectedIndex] = useState<number | string | null>(
-    null,
-  );
+  const [selectedIndex, setSelectedIndex] = useState<number | string>(0);
 
   const handleSelect = (index: number | string) => {
-    if (index === selectedIndex) {
-      const newIndex = null;
-      setSelectedIndex(newIndex);
-      callBack(newIndex);
-    } else {
-      const newIndex = index;
-      setSelectedIndex(newIndex);
-      callBack(newIndex);
-    }
+    const newIndex = index;
+    setSelectedIndex(newIndex);
+    callBack(newIndex);
   };
 
   return (
@@ -40,11 +32,10 @@ const GroupSelectBoxes: React.FC<GroupSelectBoxesProps> = ({
           <input
             type='radio'
             name='size'
-            disabled={value.disabled}
             checked={selectedIndex === value.id}
             onChange={() => {}}
             onClick={() => handleSelect(value.id)}
-            className='disabled:border-transparent disabled:bg-disabled text-primary appearance-none hover:bg-primary-hover focus:bg-primary-hover flex justify-center w-full h-full py-3 rounded-[4px] border-primary checked:border-brand-emphasize'
+            className={`${value.disabled && 'border-transparent bg-disabled'} text-primary appearance-none hover:bg-primary-hover focus:bg-primary-hover flex justify-center w-full h-full py-3 rounded-[4px] border-primary checked:border-brand-emphasize`}
           />
           <p
             className={`${value.disabled && 'text-disabled'} absolute pointer-events-none font-medium text-base`}

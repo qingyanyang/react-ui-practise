@@ -78,23 +78,24 @@ const accordionData = [
 ];
 
 const RatingCard: React.FC = () => {
-  const [selectedColorIndex, setSelectedColorIndex] = useState<
-    number | string | null
-  >(null);
+  const [selectedColorIndex, setSelectedColorIndex] = useState<number | string>(
+    0,
+  );
 
-  const [selectedSizeIndex, setSelectedSizeIndex] = useState<
-    number | string | null
-  >(null);
+  const [selectedSizeIndex, setSelectedSizeIndex] = useState<number | string>(
+    0,
+  );
 
   const [inputCounter01, setInputCounter01] = useState<number>(1);
   const [inputCounter02, setInputCounter02] = useState<number>(999);
+  const [inputCounter03, setInputCounter03] = useState<number>(0);
 
-  const getSelectedColor = (index: number | string | null): void => {
+  const getSelectedColor = (index: number | string): void => {
     setSelectedColorIndex(index);
     console.log(index);
   };
 
-  const getSelectedSize = (index: number | string | null): void => {
+  const getSelectedSize = (index: number | string): void => {
     setSelectedSizeIndex(index);
     console.log(index);
   };
@@ -106,6 +107,11 @@ const RatingCard: React.FC = () => {
 
   const getCounterValue02 = (counter: number): void => {
     setInputCounter02(counter);
+    console.log(counter);
+  };
+
+  const getCounterValue03 = (counter: number): void => {
+    setInputCounter03(counter);
     console.log(counter);
   };
 
@@ -256,15 +262,21 @@ const RatingCard: React.FC = () => {
         <ComponentCard title={'Radio:'}>
           <MyGroupColorSelect values={colors} callBack={getSelectedColor} />
           <p className='mt-8 mb-4'>
-            {selectedColorIndex !== null
-              ? `You have selected: ${
-                  colors[
-                    typeof selectedColorIndex === 'string'
-                      ? parseInt(selectedColorIndex)
-                      : selectedColorIndex
-                  ].label
-                } `
-              : 'Please select a color'}
+            {`You have selected: ${
+              colors[
+                typeof selectedColorIndex === 'string'
+                  ? parseInt(selectedColorIndex)
+                  : selectedColorIndex
+              ].label
+            } ${
+              colors[
+                typeof selectedColorIndex === 'string'
+                  ? parseInt(selectedColorIndex)
+                  : selectedColorIndex
+              ].disabled
+                ? '(out of stock)'
+                : ''
+            }`}
           </p>
           <Divider />
           <div className='mb-4'></div>
@@ -272,15 +284,21 @@ const RatingCard: React.FC = () => {
             <GroupSelectBoxes values={sizes} callBack={getSelectedSize} />
           </div>
           <p className='mt-8 mb-4'>
-            {selectedSizeIndex !== null
-              ? `You have selected: ${
-                  sizes[
-                    typeof selectedSizeIndex === 'string'
-                      ? parseInt(selectedSizeIndex)
-                      : selectedSizeIndex
-                  ].value
-                } `
-              : 'Please select a size'}
+            {`You have selected: ${
+              sizes[
+                typeof selectedSizeIndex === 'string'
+                  ? parseInt(selectedSizeIndex)
+                  : selectedSizeIndex
+              ].value
+            } ${
+              sizes[
+                typeof selectedSizeIndex === 'string'
+                  ? parseInt(selectedSizeIndex)
+                  : selectedSizeIndex
+              ].disabled
+                ? '(out of stock)'
+                : ''
+            }`}
           </p>
         </ComponentCard>
 
@@ -297,7 +315,11 @@ const RatingCard: React.FC = () => {
           <p className='mt-8 mb-4'>{`quantity selected: ${inputCounter02}`}</p>
           <Divider />
           <div className='mb-4'></div>
-          <Counter value={0} callBack={getCounterValue01} />
+          <Counter
+            initialValue={inputCounter03}
+            value={0}
+            callBack={getCounterValue03}
+          />
           <p className='mt-8 mb-4'>{`quantity selected: ${0}`}</p>
         </ComponentCard>
 
