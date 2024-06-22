@@ -9,11 +9,13 @@ interface States {
 interface MyGroupColorSelectProps {
   values: States[];
   callBack: (index: number | string) => void;
+  onChange?: (index: number | string) => void;
 }
 
 export const MyGroupColorSelect: React.FC<MyGroupColorSelectProps> = ({
   values,
   callBack,
+  onChange,
 }) => {
   const [selectedIndex, setSelectedIndex] = useState<number | string>(0);
 
@@ -21,6 +23,9 @@ export const MyGroupColorSelect: React.FC<MyGroupColorSelectProps> = ({
     const newIndex = index;
     setSelectedIndex(newIndex);
     callBack(newIndex);
+    if (selectedIndex !== index) {
+      onChange && onChange(newIndex);
+    }
   };
 
   return (

@@ -7,88 +7,121 @@ import { MyGroupColorSelect } from '../GroupColorSelect';
 import MyThumbnail from './MyThumbnail';
 import GroupSelectBoxes from '../GroupSelectBoxes';
 import PrimaryButton from '../PrimaryButton';
-import SecondaryButton from '../SecondaryButton';
 import { Counter } from '../Counter';
 import Accordion from '../Accordion';
 import { RequirementsLink } from '../RequirementsLink';
 import { useState } from 'react';
 
-const thumbnailUrls = [
-  {
-    id: 0,
-    img_urls: [
-      '../../assets/imgs/ProductDetails/voyager-hoodie-1.jpg',
-      '../../assets/imgs/ProductDetails/voyager-hoodie-2.jpg',
-      '../../assets/imgs/ProductDetails/voyager-hoodie-3.jpg',
-      '../../assets/imgs/ProductDetails/voyager-hoodie-4.jpg',
-    ],
+const productDetailsData = {
+  product_name: 'Voyager Hoodie',
+  product_rating: 3.5,
+  product_reviews: 62,
+  product_info: {
+    intro:
+      'The Voyager Hoodie is for the explorer at heart. Its durable fabric and roomy pockets are perfect for those who are always searching for the next adventure.',
+    price: 95,
+    discount: 0.8,
   },
-  {
-    id: 1,
-    img_urls: [
-      '../../assets/imgs/ProductDetails/voyager-hoodie-brown-1.jpg',
-      '../../assets/imgs/ProductDetails/voyager-hoodie-brown-2.jpg',
-      '../../assets/imgs/ProductDetails/voyager-hoodie-brown-3.jpg',
-      '../../assets/imgs/ProductDetails/voyager-hoodie-brown-4.jpg',
-    ],
-  },
-  {
-    id: 2,
-    img_urls: [
-      '../../assets/imgs/ProductDetails/voyager-hoodie-red-1.jpg',
-      '../../assets/imgs/ProductDetails/voyager-hoodie-red-2.jpg',
-      '../../assets/imgs/ProductDetails/voyager-hoodie-red-3.jpg',
-      '../../assets/imgs/ProductDetails/voyager-hoodie-red-4.jpg',
-    ],
-  },
-];
-const colors = [
-  { id: 0, color: 'bg-success-icon', disabled: false },
-  { id: 1, color: 'bg-warning-icon', disabled: false },
-  { id: 2, color: 'bg-error', disabled: true },
-];
-const sizes = [
-  { id: 0, value: 'XS', disabled: false },
-  { id: 1, value: 'S', disabled: true },
-  { id: 2, value: 'M', disabled: false },
-  { id: 3, value: 'L', disabled: false },
-  { id: 4, value: 'XL', disabled: false },
-];
+  product_stock: [
+    {
+      id: 0,
+      color: 'bg-success-icon',
+      sizes: [
+        { id: 0, value: 'XS', stock: 1 },
+        { id: 1, value: 'S', stock: 8 },
+        { id: 2, value: 'M', stock: 2 },
+        { id: 3, value: 'L', stock: 6 },
+        { id: 4, value: 'XL', stock: 9 },
+      ],
+      img_urls: [
+        '../../assets/imgs/ProductDetails/voyager-hoodie-1.jpg',
+        '../../assets/imgs/ProductDetails/voyager-hoodie-2.jpg',
+        '../../assets/imgs/ProductDetails/voyager-hoodie-3.jpg',
+        '../../assets/imgs/ProductDetails/voyager-hoodie-4.jpg',
+      ],
+    },
+    {
+      id: 1,
+      color: 'bg-warning-icon',
+      sizes: [
+        { id: 0, value: 'XS', stock: 0 },
+        { id: 1, value: 'S', stock: 8 },
+        { id: 2, value: 'M', stock: 1 },
+        { id: 3, value: 'L', stock: 6 },
+        { id: 4, value: 'XL', stock: 0 },
+      ],
+      img_urls: [
+        '../../assets/imgs/ProductDetails/voyager-hoodie-brown-1.jpg',
+        '../../assets/imgs/ProductDetails/voyager-hoodie-brown-2.jpg',
+        '../../assets/imgs/ProductDetails/voyager-hoodie-brown-3.jpg',
+        '../../assets/imgs/ProductDetails/voyager-hoodie-brown-4.jpg',
+      ],
+    },
+    {
+      id: 2,
+      color: 'bg-error',
+      sizes: [
+        { id: 0, value: 'XS', stock: 0 },
+        { id: 1, value: 'S', stock: 0 },
+        { id: 2, value: 'M', stock: 0 },
+        { id: 3, value: 'L', stock: 0 },
+        { id: 4, value: 'XL', stock: 0 },
+      ],
+      img_urls: [
+        '../../assets/imgs/ProductDetails/voyager-hoodie-red-1.jpg',
+        '../../assets/imgs/ProductDetails/voyager-hoodie-red-2.jpg',
+        '../../assets/imgs/ProductDetails/voyager-hoodie-red-3.jpg',
+        '../../assets/imgs/ProductDetails/voyager-hoodie-red-4.jpg',
+      ],
+    },
+  ],
+  product_desc: [
+    {
+      title: 'Features',
+      content: [
+        'Designed for comfort and durability.',
+        'Soft, breathable fabric ideal for travel and adventure.',
+        'Large front pocket and adjustable hood.',
+        'Minimalist design pairs well with any style.',
+        'Made with eco-conscious materials.',
+      ],
+    },
+    {
+      title: 'Fabric & Care',
+      content: [
+        'Designed for comfort and durability.',
+        'Soft, breathable fabric ideal for travel and adventure.',
+        'Large front pocket and adjustable hood.',
+        'Minimalist design pairs well with any style.',
+        'Made with eco-conscious materials.',
+      ],
+    },
+    {
+      title: 'Shipping',
+      content: [
+        'Free standard shipping on all orders - no minimum spend required.',
+        'Expedited shipping available at an additional cost.',
+        'Packaged in biodegradable materials to reduce environmental impact.',
+      ],
+    },
+  ],
+};
 
-const accordionData = [
-  {
-    title: 'Features',
-    content: [
-      'Designed for comfort and durability.',
-      'Soft, breathable fabric ideal for travel and adventure.',
-      'Large front pocket and adjustable hood.',
-      'Minimalist design pairs well with any style.',
-      'Made with eco-conscious materials.',
-    ],
-  },
-  {
-    title: 'Fabric & Care',
-    content: [
-      'Designed for comfort and durability.',
-      'Soft, breathable fabric ideal for travel and adventure.',
-      'Large front pocket and adjustable hood.',
-      'Minimalist design pairs well with any style.',
-      'Made with eco-conscious materials.',
-    ],
-  },
-  {
-    title: 'Shipping',
-    content: [
-      'Free standard shipping on all orders - no minimum spend required.',
-      'Expedited shipping available at an additional cost.',
-      'Packaged in biodegradable materials to reduce environmental impact.',
-    ],
-  },
-];
 function ProductDetails() {
   const [colorIndex, setColorIndex] = useState<number | string>(0);
   const [sizeIndex, setSizeIndex] = useState<number | string>(0);
+  const [counter, setCounter] = useState<number>(0);
+  const [revertChildCounterFlag, setRevertChildCounterFlag] =
+    useState<boolean>(false);
+
+  const revertCounterValue = (): void => {
+    setCounter(0);
+    setRevertChildCounterFlag(!revertChildCounterFlag);
+    console.log(counter);
+  };
+
   const getCounterValue = (counter: number): void => {
+    setCounter(counter);
     console.log(counter);
   };
 
@@ -102,12 +135,40 @@ function ProductDetails() {
     console.log(index);
   };
 
+  const handleSelectedColorChange = (newIndex: number | string) => {
+    console.log(newIndex);
+    revertCounterValue();
+  };
+
+  const handleSelectedSizeChange = (newIndex: number | string) => {
+    console.log(newIndex);
+    revertCounterValue();
+  };
+
+  type ColorModel = {
+    id: number;
+    color: string;
+    disabled: boolean;
+  };
+
+  const getColorModel = (): ColorModel[] => {
+    const stockArr = productDetailsData.product_stock;
+    const res = stockArr.map((stock) => {
+      return {
+        id: stock.id,
+        color: stock.color,
+        disabled: stock.sizes.every((size) => size.stock === 0),
+      };
+    });
+    return res;
+  };
+
   return (
     <SectionContainer>
       <div className='py-12 px-4 tablet:py-16 desktop:px-24 desktop:py-24 w-full grid gap-8 desktop:grid-cols-2 items-start bg-primary'>
         <MyThumbnail
           thumbnailUrls={
-            thumbnailUrls.filter(
+            productDetailsData.product_stock.filter(
               (thumbnailUrl) => thumbnailUrl.id === colorIndex,
             )[0].img_urls
           }
@@ -116,25 +177,42 @@ function ProductDetails() {
           <div className='flex flex-col gap-8'>
             <div className='flex flex-col'>
               <p className='mb-5 font-semibold text-3xl tablet:text-5xl'>
-                Voyager Hoodie
+                {productDetailsData.product_name}
               </p>
               <span className='mb-2 flex gap-2 items-baseline'>
-                <span className='font-medium text-3xl text-secondary'>$76</span>
+                {productDetailsData.product_info.discount && (
+                  <span className='font-medium text-3xl text-secondary'>
+                    {`$${
+                      productDetailsData.product_info.discount &&
+                      productDetailsData.product_info.discount *
+                        productDetailsData.product_info.price
+                    }`}
+                  </span>
+                )}
                 <span className='font-medium text-lg line-through text-disabled'>
-                  $95
+                  {`$${productDetailsData.product_info.price}`}
                 </span>
               </span>
-              <MyChip text={'20% OFF'} color={MyColor.Warning} />
-              <div className='mt-1 flex gap-2 items-center'>
-                <Rating value={3.5} />
-                <TextButton text={'See all 62 reviews'} />
+              {productDetailsData.product_info.discount && (
+                <>
+                  <MyChip text={'20% OFF'} color={MyColor.Warning} />
+                  <div className='mt-1'></div>
+                </>
+              )}
+              <div className='flex gap-2 items-center'>
+                <Rating value={productDetailsData.product_rating} />
+                <TextButton
+                  text={
+                    productDetailsData.product_reviews
+                      ? `See all ${productDetailsData.product_reviews} reviews`
+                      : 'Be the first.'
+                  }
+                />
               </div>
             </div>
             <div>
               <p className='font-normal text-base text-secondary'>
-                The Voyager Hoodie is for the explorer at heart. Its durable
-                fabric and roomy pockets are perfect for those who are always
-                searching for the next adventure.
+                {productDetailsData.product_info.intro}
               </p>
             </div>
             <div className='flex flex-col gap-4'>
@@ -143,7 +221,8 @@ function ProductDetails() {
               </p>
               <div className='flex gap-6'>
                 <MyGroupColorSelect
-                  values={colors}
+                  onChange={handleSelectedColorChange}
+                  values={getColorModel()}
                   callBack={getSelectedColor}
                 />
               </div>
@@ -153,17 +232,41 @@ function ProductDetails() {
                 Available Sizes
               </p>
               <div className='flex gap-4 flex-wrap items-center'>
-                <GroupSelectBoxes values={sizes} callBack={getSelectedSize} />
+                <GroupSelectBoxes
+                  onChange={handleSelectedSizeChange}
+                  values={
+                    productDetailsData.product_stock.filter(
+                      (ele) => ele.id === colorIndex,
+                    )[0].sizes
+                  }
+                  callBack={getSelectedSize}
+                />
               </div>
             </div>
             <div className='relative flex flex-col gap-4'>
               <p className='text-tertiary font-normal text-sm'>Quantity</p>
-              <Counter value={8} callBack={getCounterValue} />
+              <Counter
+                needRevertChildCounter={revertChildCounterFlag}
+                initialValue={0}
+                value={
+                  productDetailsData.product_stock
+                    .filter((ele) => ele.id === colorIndex)[0]
+                    .sizes.filter((size) => size.id === sizeIndex)[0].stock
+                }
+                callBack={getCounterValue}
+              />
             </div>
-            <PrimaryButton text={'Add to Cart'} />
-            <SecondaryButton text={'Cancel'} />
+            <PrimaryButton
+              text={'Add to Cart'}
+              disabled={
+                productDetailsData.product_stock
+                  .filter((ele) => ele.id === colorIndex)[0]
+                  .sizes.filter((size) => size.id === sizeIndex)[0].stock ===
+                  0 || counter === 0
+              }
+            />
           </div>
-          <Accordion data={accordionData} />
+          <Accordion data={productDetailsData.product_desc} />
         </div>
       </div>
       <RequirementsLink

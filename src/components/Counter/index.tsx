@@ -1,17 +1,19 @@
 import { Remove, Add } from '@mui/icons-material';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Tooltip from '../ToolTip';
 
 interface CounterProps {
   initialValue?: number;
   value: number;
   callBack: (counter: number) => void;
+  needRevertChildCounter?: boolean;
 }
 
 export const Counter: React.FC<CounterProps> = ({
   initialValue = 1,
   value,
   callBack,
+  needRevertChildCounter,
 }) => {
   const [counter, setCounter] = useState(initialValue);
   const [visible, setVisible] = useState(false);
@@ -33,6 +35,10 @@ export const Counter: React.FC<CounterProps> = ({
       callBack(newCounter);
     }
   };
+
+  useEffect(() => {
+    setCounter(initialValue);
+  }, [needRevertChildCounter]);
 
   return (
     <div className='flex items-center'>

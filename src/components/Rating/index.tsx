@@ -64,8 +64,13 @@ export const Rating: React.FC<RatingProps> = ({
           </i>
         ))}
       </span>
-
-      {text && <div className='ml-2 text-tertiary text-sm'>{text}</div>}
+      {value === 0 ? (
+        <div className='ml-2 text-tertiary text-sm'>No reviews yet</div>
+      ) : text ? (
+        <div className='ml-2 text-tertiary text-sm'>{text}</div>
+      ) : (
+        ''
+      )}
     </div>
   );
 };

@@ -27,11 +27,11 @@ const colors = [
 ];
 
 const sizes = [
-  { id: 0, value: 'XS', disabled: false },
-  { id: 1, value: 'S', disabled: true },
-  { id: 2, value: 'M', disabled: false },
-  { id: 3, value: 'L', disabled: false },
-  { id: 4, value: 'XL', disabled: false },
+  { id: 0, value: 'XS', stock: 4 },
+  { id: 1, value: 'S', stock: 1 },
+  { id: 2, value: 'M', stock: 0 },
+  { id: 3, value: 'L', stock: 3 },
+  { id: 4, value: 'XL', stock: 10 },
 ];
 
 const accordionData = [
@@ -295,9 +295,9 @@ const RatingCard: React.FC = () => {
                 typeof selectedSizeIndex === 'string'
                   ? parseInt(selectedSizeIndex)
                   : selectedSizeIndex
-              ].disabled
-                ? '(out of stock)'
-                : ''
+              ].stock
+                ? ''
+                : '(out of stock)'
             }`}
           </p>
         </ComponentCard>
@@ -308,7 +308,7 @@ const RatingCard: React.FC = () => {
           <Divider />
           <div className='mb-4'></div>
           <Counter
-            initialValue={999}
+            initialValue={inputCounter02}
             value={999}
             callBack={getCounterValue02}
           />
