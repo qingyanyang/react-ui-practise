@@ -141,7 +141,7 @@ function Navigation() {
              *
              *  */}
             <MyAvator
-              src={'/assets/imgs/TestimonialCard/profile-thumbnail.png'}
+              src={'/assets/imgs/TestimonialCard/display-photo-squre.jpg'}
               alt={'profile-thumbnail'}
             />
           </Box>
