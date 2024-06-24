@@ -1,3 +1,5 @@
+import { emphasize } from '@mui/material';
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
@@ -19,13 +21,22 @@ export default {
         DEFAULT: '#4338ca',
         hover: '#3730a3',
       },
-      disabled: '#a3a3a3',
+      disabled: {
+        DEFAULT: '#a3a3a3',
+        icon: '#e6e6e6',
+      },
       error: {
-        DEFAULT: '#c03934',
+        DEFAULT: '#dc2626',
         emphasize: '#991b1b',
       },
-      success: '#3b7b42',
-      warning: '#a05826',
+      success: {
+        DEFAULT: '#15803d',
+        icon: '#10b981',
+      },
+      warning: {
+        DEFAULT: '#a16207',
+        icon: '#facc15',
+      },
       neutral: '#525154',
     },
     backgroundColor: {
@@ -54,16 +65,18 @@ export default {
       error: {
         DEFAULT: '#dc2626',
         emphasize: '#b91c1c',
-        subtle: '#fcf2f2',
+        subtle: '#fef2f2',
       },
       success: {
-        subtle: '#f2fdf5',
+        subtle: '#f0fdf4',
+        icon: '#10b981',
       },
       neutral: {
-        subtle: '#f9fbfc',
+        subtle: '#f9fafb',
       },
       warning: {
-        subtle: '#fefbed',
+        subtle: '#fffbeb',
+        icon: '#ca8a04',
       },
     },
     lineColor: {
@@ -107,17 +120,26 @@ export default {
       background: '#fafafa',
       border: '#e5e5e5',
     },
+    outlineColor: {
+      brand: {
+        DEFAULT: '#c7d2fe',
+        light: '#eef2ff',
+        emphasize: '#4338ca',
+      },
+    },
     borderColor: {
       primary: '#e5e5e5',
-      success: '#cdf1d6',
+      secondary: '#9ca3af',
+      success: '#bbf7d0',
       brand: {
-        DEFAULT: '#c8d3fb',
-        light: '#e9eafb',
+        DEFAULT: '#c7d2fe',
+        light: '#eef2ff',
+        emphasize: '#4338ca',
       },
       transparent: 'transparent',
-      error: '#f2cfd2',
-      warning: '#f7eaa0',
-      neutral: '#e4e4e6',
+      error: '#fecaca',
+      warning: '#fde68a',
+      neutral: '#e5e5e5',
     },
     borderRadius: {
       none: '0',
@@ -127,9 +149,20 @@ export default {
       full: '9999px',
     },
     extend: {
+      aspectRatio: {
+        '592/800': '592 / 800',
+        '592/190': '592 / 190',
+        '160/190': '160 / 190',
+        '704/190': '704 / 190',
+        '188/190': '188 / 190',
+        '311/120': '311 / 120',
+        '80/120': '80 / 120',
+      },
       boxShadow: {
         DEFAULT:
           '0px 1px 2px 0 rgb(0 0 0 / 0.06), 0px 1px 3px 0 rgb(0 0 0 / 0.10)',
+        toolTip:
+          '0px 4px 6px -4px rgb(0 0 0 / 0.10), 0px 10px 15px -3px rgb(0 0 0 / 0.10)',
       },
       spacing: {
         '2px': '2px',

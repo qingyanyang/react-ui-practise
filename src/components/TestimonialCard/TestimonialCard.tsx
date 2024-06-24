@@ -25,7 +25,7 @@ export const TestimonialCard: React.FC<TestimonialCardProps> = ({
 }) => {
   return (
     <div
-      className={`w-[340px] flex flex-col justify-center gap-4 p-6 rounded-lg bg-primary border-primary border shadow`}
+      className={`break-inside-avoid w-[340px] flex flex-col justify-center gap-4 p-6 rounded-lg bg-primary border-primary border shadow`}
     >
       <div className='flex gap-4 items-center self-stretch'>
         <MyAvator src={avatarSrc} alt={'profile-thumbnail'} />

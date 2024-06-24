@@ -24,7 +24,7 @@ interface ChipProps {
                 Neutral = 'neutral',
             }
  */
-export const MyChip: React.FC<ChipProps> = ({
+const MyChip: React.FC<ChipProps> = ({
   text,
   color = MyColor.Success,
   size = MyChipSize.Normal,
@@ -36,19 +36,22 @@ export const MyChip: React.FC<ChipProps> = ({
     large: 'text-lg',
   };
   return (
-    <div
-      style={{
-        borderColor: selectedColor.borderColor,
-        backgroundColor: selectedColor.bgColor,
-      }}
-      className={`self-start rounded-full py-0.125em px-0.5em border-primary`}
-    >
-      <p
-        style={{ color: selectedColor.textColor }}
-        className={`${textSizeClass[size]} font-normal short-label-ellipsis`}
+    <div className='flex items-center'>
+      <div
+        style={{
+          borderColor: selectedColor.borderColor,
+          backgroundColor: selectedColor.bgColor,
+        }}
+        className='self-start rounded-full py-0.125em px-0.5em border-primary'
       >
-        {text}
-      </p>
+        <p
+          style={{ color: selectedColor.textColor }}
+          className={`${textSizeClass[size]} font-normal short-label-ellipsis`}
+        >
+          {text}
+        </p>
+      </div>
     </div>
   );
 };
+export default MyChip;

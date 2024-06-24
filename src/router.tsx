@@ -4,6 +4,8 @@ import React from 'react';
 import TestimonialCard from './components/TestimonialCard';
 import BlogCard from './components/BlogCard';
 import NotFound from './pages/NotFoundPage';
+import ProductDetails from './components/ProductDetail';
+import ComponentsCombination from './components/ComponentsCombination';
 
 const router = createBrowserRouter([
   {
@@ -17,6 +19,14 @@ const router = createBrowserRouter([
       {
         path: 'blog-card',
         element: <BlogCard />,
+      },
+      {
+        path: 'components-combination',
+        element: <ComponentsCombination />,
+      },
+      {
+        path: 'product-details',
+        element: <ProductDetails />,
       },
     ],
   },

@@ -1,6 +1,6 @@
 import ArrowForwardOutlinedIcon from '@mui/icons-material/ArrowForwardOutlined';
-import { MyChip } from '../Chip';
-import { TextButton } from '../TextButton';
+import MyChip from '../Chip';
+import TextButton from '../TextButton';
 
 /**
  * @description: card for display user info; long string frendly; fixed round padding value; card height grow with content when needed.
@@ -21,7 +21,7 @@ interface BlogCardProps {
   disabled: boolean;
 }
 
-export const BlogCard: React.FC<BlogCardProps> = ({
+const BlogCard: React.FC<BlogCardProps> = ({
   imgSrc,
   labels,
   title,
@@ -29,7 +29,7 @@ export const BlogCard: React.FC<BlogCardProps> = ({
   disabled,
 }) => {
   return (
-    <div className='w-[340px] rounded-lg bg-primary border-primary border shadow overflow-hidden'>
+    <div className='break-inside-avoid w-[340px] rounded-lg bg-primary border-primary border shadow overflow-hidden'>
       <img src={imgSrc} className='w-full h-[288px] object-cover' />
       <div className='w-full py-6 px-4 flex flex-col gap-3 items-start'>
         <div className='flex flex-col gap-2'>
@@ -56,3 +56,4 @@ export const BlogCard: React.FC<BlogCardProps> = ({
     </div>
   );
 };
+export default BlogCard;

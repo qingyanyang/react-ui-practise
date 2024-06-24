@@ -6,15 +6,16 @@ interface RequirementsLinkProps {
  *
  * @param link: requirements link for the component include figma
  */
-export const RequirementsLink: React.FC<RequirementsLinkProps> = ({ link }) => {
+const RequirementsLink: React.FC<RequirementsLinkProps> = ({ link }) => {
   return (
-    <span>
+    <div className='m-10 text-center inline'>
       <p>
         <strong>Requirements: </strong>
         <a className='underline text-brand' href={link}>
           {link}
         </a>
       </p>
-    </span>
+    </div>
   );
 };
+export default RequirementsLink;
