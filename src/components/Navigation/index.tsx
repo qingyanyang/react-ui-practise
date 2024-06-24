@@ -135,11 +135,6 @@ function Navigation() {
             </ToggleButtonGroup>
           </Box>
           <Box sx={{ flexGrow: 0 }}>
-            {/*
-             *
-             * todo: need to replace the link while got production link
-             *
-             *  */}
             <MyAvator
               src={'/assets/imgs/TestimonialCard/display-photo-squre.jpg'}
               alt={'profile-thumbnail'}
