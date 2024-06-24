@@ -1,8 +1,8 @@
 import React from 'react';
-import { SectionContainer } from '../SectionContainer';
-import { RequirementsLink } from '../RequirementsLink';
-import { BlogCard } from './BlogCard';
-import { GridContainer } from '../GridContainer';
+import SectionContainer from '../SectionContainer';
+import RequirementsLink from '../RequirementsLink';
+import BlogCard from './BlogCard';
+import GridContainer from '../GridContainer';
 
 /**
  * @implements: need future api to connect data

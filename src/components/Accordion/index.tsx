@@ -2,17 +2,35 @@ import { AddCircleOutline, RemoveCircleOutline } from '@mui/icons-material';
 import { Divider } from '@mui/material';
 import { useState } from 'react';
 
-interface Model {
+/**
+ * @example: 
+ *        const accordionData = [
+            {
+              title: 'Specifications',
+              content: [
+                'Weight: 1.2 kg',
+                'Dimensions: 25 x 15 x 10 cm',
+                'Material: Stainless Steel',
+              ],
+            }
+          ]
+ *        <Accordion
+            data={accordionData}
+          />
+ */
+interface AccordionModel {
   title: string;
   content: string[];
 }
 
 interface AccordionProps {
-  data: Model[];
+  data: AccordionModel[];
 }
 
-export const Accordion: React.FC<AccordionProps> = ({ data }) => {
+const Accordion: React.FC<AccordionProps> = ({ data }) => {
   const len = data.length;
+  if (len < 1)
+    throw new Error('The data array should contain at least one item.');
   const [expand, setExpand] = useState(new Array(len).fill(true));
 
   const handleExpand = (index: number) => {
@@ -41,8 +59,8 @@ export const Accordion: React.FC<AccordionProps> = ({ data }) => {
             <div>
               {expand[index] && (
                 <ul className='list-disc list-inside ml-2 font-normal text-base text-secondary'>
-                  {ele.content.map((li) => (
-                    <li>{li}</li>
+                  {ele.content.map((li, index) => (
+                    <li key={`${ele.title}${index}`}>{li}</li>
                   ))}
                 </ul>
               )}

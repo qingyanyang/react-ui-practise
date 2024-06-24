@@ -30,7 +30,7 @@ interface RatingProps {
   emptyColor?: string;
 }
 
-export const Rating: React.FC<RatingProps> = ({
+const Rating: React.FC<RatingProps> = ({
   value,
   text,
   icon: Icon = StarFilledIcon,

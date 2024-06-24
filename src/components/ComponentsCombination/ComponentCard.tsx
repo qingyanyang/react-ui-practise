@@ -6,10 +6,7 @@ interface ComponentCardProps {
   children: ReactNode;
 }
 
-export const ComponentCard: React.FC<ComponentCardProps> = ({
-  title,
-  children,
-}) => {
+const ComponentCard: React.FC<ComponentCardProps> = ({ title, children }) => {
   return (
     <div
       className={`w-[340px] rounded-lg bg-primary border-primary border shadow overflow-hidden px-4 py-6`}
@@ -21,3 +18,4 @@ export const ComponentCard: React.FC<ComponentCardProps> = ({
     </div>
   );
 };
+export default ComponentCard;

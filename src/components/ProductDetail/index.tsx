@@ -1,16 +1,16 @@
-import { SectionContainer } from '../SectionContainer';
-import { MyChip } from '../Chip';
+import { useState } from 'react';
+import SectionContainer from '../SectionContainer';
+import MyChip from '../Chip';
 import { MyColor } from '../../util/constants';
-import { TextButton } from '../TextButton';
-import { Rating } from '../Rating';
-import { MyGroupColorSelect } from '../GroupColorSelect';
+import TextButton from '../TextButton';
+import Rating from '../Rating';
+import MyGroupColorSelect from '../GroupColorSelect';
 import MyThumbnail from './MyThumbnail';
 import GroupSelectBoxes from '../GroupSelectBoxes';
 import PrimaryButton from '../PrimaryButton';
-import { Counter } from '../Counter';
+import Counter from '../Counter';
 import Accordion from '../Accordion';
-import { RequirementsLink } from '../RequirementsLink';
-import { useState } from 'react';
+import RequirementsLink from '../RequirementsLink';
 
 const productDetailsData = {
   product_name: 'Voyager Hoodie',
@@ -145,6 +145,14 @@ function ProductDetails() {
     revertCounterValue();
   };
 
+  const handlePrimaryButtonClick = () => {
+    alert(`data collected:
+      color index: ${colorIndex} 
+      size index: ${sizeIndex}
+      quantity: ${counter}
+      `);
+  };
+
   type ColorModel = {
     id: number;
     color: string;
@@ -257,6 +265,7 @@ function ProductDetails() {
               />
             </div>
             <PrimaryButton
+              onClick={handlePrimaryButtonClick}
               text={'Add to Cart'}
               disabled={
                 productDetailsData.product_stock

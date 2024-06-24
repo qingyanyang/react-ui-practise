@@ -12,7 +12,7 @@ interface MyGroupColorSelectProps {
   onChange?: (index: number | string) => void;
 }
 
-export const MyGroupColorSelect: React.FC<MyGroupColorSelectProps> = ({
+const MyGroupColorSelect: React.FC<MyGroupColorSelectProps> = ({
   values,
   callBack,
   onChange,
@@ -44,7 +44,7 @@ export const MyGroupColorSelect: React.FC<MyGroupColorSelectProps> = ({
             className={`
               peer appearance-none ${selectedIndex === value.id ? 'w-[36px] h-[36px]' : 'w-[38px] h-[38px]'} ${value.color} rounded-full overflow-hidden flex justify-center items-center
               hover:border-brand hover:border-2
-              focus:ring-8 focus:border-none focus:ring-indigo-50 focus:ring-offset-0
+              active:ring-8 active:border-none active:ring-indigo-50 active:ring-offset-0
               ${value.disabled && selectedIndex === value.id && 'ring-1 ring-indigo-700 ring-offset-2 w-[36px] h-[36px]'}
               checked:ring-1 checked:ring-indigo-700 checked:ring-offset-2 checked:w-[36px] checked:h-[36px]
             `}

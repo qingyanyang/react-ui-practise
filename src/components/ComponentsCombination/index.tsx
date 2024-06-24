@@ -1,22 +1,22 @@
 import React, { useState } from 'react';
-import { SectionContainer } from '../SectionContainer';
-import { RequirementsLink } from '../RequirementsLink';
-import { Rating } from '../Rating';
 import { HeartFilledIcon } from '@radix-ui/react-icons';
-import MyGroupColorSelect from '../GroupColorSelect';
+import { ArrowBack } from '@mui/icons-material';
 import Divider from '@mui/material/Divider';
+import ArrowForwardOutlinedIcon from '@mui/icons-material/ArrowForwardOutlined';
+import MyGroupColorSelect from '../GroupColorSelect';
+import SectionContainer from '../SectionContainer';
+import RequirementsLink from '../RequirementsLink';
+import Rating from '../Rating';
 import GroupSelectBoxes from '../GroupSelectBoxes';
 import Counter from '../Counter';
-import { TextButton } from '../TextButton';
-import ArrowForwardOutlinedIcon from '@mui/icons-material/ArrowForwardOutlined';
-import { ArrowBack } from '@mui/icons-material';
-import { MyChip } from '../Chip';
+import TextButton from '../TextButton';
+import MyChip from '../Chip';
 import { MyChipSize, MyColor } from '../../util/constants';
 import PrimaryButton from '../PrimaryButton';
 import SecondaryButton from '../SecondaryButton';
 import Accordion from '../Accordion';
-import { GridContainer } from '../GridContainer';
-import { ComponentCard } from './ComponentCard';
+import GridContainer from '../GridContainer';
+import ComponentCard from './ComponentCard';
 
 const colors = [
   { id: 0, color: 'bg-success-icon', disabled: false, label: 'green' },

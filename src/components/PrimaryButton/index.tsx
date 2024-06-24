@@ -5,6 +5,7 @@ interface PrimaryButtonProps {
   color?: string;
   fontSize?: string;
   disabled?: boolean;
+  onClick?: () => void;
 }
 
 const PrimaryButton: React.FC<PrimaryButtonProps> = ({
@@ -12,9 +13,11 @@ const PrimaryButton: React.FC<PrimaryButtonProps> = ({
   color = 'bg-brand-primary',
   fontSize = 'text-lg',
   disabled = false,
+  onClick,
 }) => {
   return (
     <button
+      onClick={onClick}
       disabled={disabled}
       className={`
         block
@@ -22,7 +25,7 @@ const PrimaryButton: React.FC<PrimaryButtonProps> = ({
         ${color} 
         ${fontSize}
         ${disabled ? 'bg-disabled text-disabled' : 'hover:bg-brand-primary-emphasize text-primary-invert'}
-        ring-4 ring-transparent focus:bg-brand-primary-emphasize focus:ring-indigo-50 
+        ring-4 ring-transparent ${!disabled && 'active:bg-brand-primary-emphasize active:ring-indigo-50 '} 
         p-[0.75em] rounded-[4px] font-medium 
       `}
     >

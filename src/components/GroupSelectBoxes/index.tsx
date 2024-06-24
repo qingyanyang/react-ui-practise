@@ -40,7 +40,7 @@ const GroupSelectBoxes: React.FC<GroupSelectBoxesProps> = ({
             checked={selectedIndex === value.id}
             onChange={() => {}}
             onClick={() => handleSelect(value.id)}
-            className={`${!value.stock && 'border-transparent bg-disabled'} text-primary appearance-none hover:bg-primary-hover focus:bg-primary-hover flex justify-center w-full h-full py-3 rounded-[4px] border-primary checked:border-brand-emphasize`}
+            className={`${!value.stock && 'border-transparent bg-disabled'} text-primary appearance-none hover:bg-primary-hover active:bg-primary-hover flex justify-center w-full h-full py-3 rounded-[4px] border-primary checked:border-brand-emphasize`}
           />
           <p
             className={`${!value.stock && 'text-disabled'} absolute pointer-events-none font-medium text-base`}
