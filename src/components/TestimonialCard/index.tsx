@@ -35,7 +35,7 @@ const testimonialsData = {
     },
   ],
   require_link:
-    'https://github.com/users/qingyanyang/projects/3?pane=issue&itemId=67543195',
+    'https://www.figma.com/proto/9VTjANqjDMcq68XHwKMuNs/testimonial-card-figma-(1)?node-id=0-1&t=06NRttdNoKfiaE2L-1',
 };
 
 function TestimonialCards() {

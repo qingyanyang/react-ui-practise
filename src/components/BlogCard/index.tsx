@@ -36,7 +36,7 @@ const blogCardData = {
     },
   ],
   requireLink:
-    'https://github.com/users/qingyanyang/projects/3?pane=issue&itemId=67543203',
+    'https://www.figma.com/design/1LEv14PQb9bndJDto2Vpa2/blog-card-figma?m=dev&node-id=2001-89',
 };
 
 function BlogCards() {
