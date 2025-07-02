@@ -347,7 +347,7 @@ const RatingCard: React.FC = () => {
       </GridContainer>
       <RequirementsLink
         link={
-          'https://github.com/users/qingyanyang/projects/3/views/1?pane=issue&itemId=67543327'
+          'https://www.figma.com/design/6YUC4dz3pY6HbvOBXaKKPf/product-details-section-figma?m=dev&node-id=0-1'
         }
       />
     </SectionContainer>
