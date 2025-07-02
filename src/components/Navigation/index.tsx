@@ -4,13 +4,12 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
-import Container from '@mui/material/Container';
 import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import MenuItem from '@mui/material/MenuItem';
 import IconButton from '@mui/material/IconButton';
-import { Avatar } from '@radix-ui/themes';
 import { Link } from 'react-router-dom';
+import MyAvator from '../MyAvator/MyAvator';
 
 /**
  * Nav content
@@ -18,10 +17,8 @@ import { Link } from 'react-router-dom';
 const links = [
   { id: '1', name: 'testimonial card', path: '/' },
   { id: '2', name: 'blog card', path: '/blog-card' },
-  { id: '3', name: 'blog card', path: '/blog-card' },
-  { id: '4', name: 'blog card', path: '/blog-card' },
-  { id: '5', name: 'blog card', path: '/blog-card' },
-  { id: '6', name: 'blog card', path: '/blog-card' },
+  { id: '3', name: 'components', path: '/components-combination' },
+  { id: '4', name: 'product details', path: '/product-details' },
 ];
 
 /**
@@ -79,8 +76,8 @@ function Navigation() {
   };
 
   return (
-    <AppBar position='static'>
-      <Container maxWidth='xl' className='bg-formColor-text-filled'>
+    <AppBar>
+      <div className='px-10 bg-primary-filled'>
         <Toolbar disableGutters>
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
@@ -138,20 +135,13 @@ function Navigation() {
             </ToggleButtonGroup>
           </Box>
           <Box sx={{ flexGrow: 0 }}>
-            {/*
-             *
-             * todo: need to replace the link while got production link
-             *
-             *  */}
-            <Avatar
-              size='3'
-              src='https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?&w=256&h=256&q=70&crop=focalpoint&fp-x=0.5&fp-y=0.3&fp-z=1&fit=crop'
-              radius='full'
-              fallback='A'
+            <MyAvator
+              src={'/assets/imgs/TestimonialCard/display-photo-squre.jpg'}
+              alt={'profile-thumbnail'}
             />
           </Box>
         </Toolbar>
-      </Container>
+      </div>
     </AppBar>
   );
 }
