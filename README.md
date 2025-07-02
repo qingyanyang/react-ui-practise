@@ -1,8 +1,15 @@
 
-To view the project:
-yarn install -> yarn start
+# React UI Component Practices
 
-system ui practise based on figma
+- Developed reusable UI components following figma design provided by @GreatFrontend.
+- Deployed the application as a static website on Azure.
 
-Click [Here](https://calm-water-086093200.5.azurestaticapps.net/) to have a look
+# Live demo
+You can view the live demo of the project [here](https://calm-water-086093200.5.azurestaticapps.net/).
 
+## Commands
+
+| name                 | commands      |
+| -------------------- | ------------- |
+| install dependencies | `yarn install` |
+| run locally          | `yarn start` |
